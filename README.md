@@ -12,6 +12,10 @@ ELDIS-Basic ist momentan leider nur für Feuerwehren erhältlich. Jedoch kannst 
 
 ------------------------------------------------------------------------------
 
+Eine Dokumentation, wie man ELDIS Basic aufsetzt und benutzt, folgt. Du kannst jedoch auf unseren Discord Fragen stellen, es ist jede Frage bzgl. ELDIS erwünscht :) https://discord.com/NJk8Qkb
+
+------------------------------------------------------------------------------
+
 <b>Was braucht man für ELDIS-Basic?</b>
 
 Vorraussetzungen für das ELDIS-Basic System:
