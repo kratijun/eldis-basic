@@ -37,7 +37,7 @@ Public Class hauptmenu
 
     Private Sub hauptmenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         eldisModule.ConnectToELDIS()
-        emergencyModule.GetEinsatze()
+        emergencyModule.GetEinsatze(einsatzliste)
         AlarmUhrzeit = DateTime.Now.ToString("dd/MM/yyyy: " & DateTime.Now.ToString("HH:mm:ss"))
         Me.Text = "ELDIS @" & My.Settings.benutzername & " [" & Me.GetType.Assembly.GetName.Version.ToString & "]"
         Dim Uhrzeit = DateTime.Now.ToString("HH:mm:ss") & " Uhr | "
@@ -287,6 +287,7 @@ Public Class hauptmenu
         'Reset your List box here.
 
         While (myReader.Read())
+
             'Sperrung wurde auskommentiert, da die Funktion ungültig ist. FIX SOON : p
             If myReader.GetString(18) = "yes" Then
                 MessageBox.Show("Dieser Einsatz wird bearbeitet! (" + myReader.GetString(19) + ")", "ELDIS", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -340,7 +341,7 @@ Public Class hauptmenu
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        GetEinsatze()
+        emergencyModule.GetEinsatze(einsatzliste)
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
@@ -398,6 +399,10 @@ Public Class hauptmenu
     End Sub
 
     Private Sub eldis_einsatzerfassung_Click(sender As Object, e As EventArgs) Handles eldis_einsatzerfassung.Click
+
+    End Sub
+
+    Private Sub einsatzübersicht_box_Enter(sender As Object, e As EventArgs) Handles einsatzübersicht_box.Enter
 
     End Sub
 End Class

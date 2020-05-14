@@ -119,7 +119,7 @@ WHERE einsatznummer = '" & whereEinsatzID & "'"
         conn.Close()
     End Function
 
-    Function GetEinsatze()
+    Function GetEinsatze(ByVal whatTable As DataGridView)
         Dim conn As MySqlConnection
         Dim cmd As New MySqlCommand
         conn = New MySqlConnection()
@@ -136,6 +136,6 @@ WHERE einsatznummer = '" & whereEinsatzID & "'"
         Dim adapter As New MySqlDataAdapter
         adapter.SelectCommand = cmd
         adapter.Fill(table)
-        hauptmenu.einsatzliste.DataSource = table
+        whatTable.DataSource = table
     End Function
 End Module

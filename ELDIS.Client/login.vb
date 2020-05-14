@@ -64,7 +64,7 @@ Public Class login
                     MsgBox("Dein Passwort ODER Benutzername ist falsch.", MsgBoxStyle.Information)
                 End If
             Catch ex As Exception
-                MessageBox.Show(ex.Message)
+                MsgBox("Etwas stimmt nicht mit der Datenbankverbindung! Frage bei dem zuständigen Administrator nach und melde dieses Problem.", MsgBoxStyle.Critical)
             Finally
             End Try
         End If
