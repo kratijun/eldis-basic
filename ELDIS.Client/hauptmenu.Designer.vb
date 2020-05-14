@@ -112,12 +112,12 @@ Partial Class hauptmenu
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(2, 2, 0, 2)
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ELDISToolStripMenuItem, Me.DisponentToolStripMenuItem, Me.AdminToolStripMenuItem, Me.BenutzerToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 1, 0, 1)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1759, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(2638, 33)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "eldis_menustrip"
         '
@@ -125,66 +125,66 @@ Partial Class hauptmenu
         '
         Me.ELDISToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PagerToolStripMenuItem, Me.FunkgerätToolStripMenuItem})
         Me.ELDISToolStripMenuItem.Name = "ELDISToolStripMenuItem"
-        Me.ELDISToolStripMenuItem.Size = New System.Drawing.Size(48, 22)
+        Me.ELDISToolStripMenuItem.Size = New System.Drawing.Size(73, 29)
         Me.ELDISToolStripMenuItem.Text = "ELDIS"
         '
         'PagerToolStripMenuItem
         '
-        Me.PagerToolStripMenuItem.Image = ELDIS.Client.My.Resources.Resources._32_0
+        Me.PagerToolStripMenuItem.Image = Global.ELDIS.Client.My.Resources.Resources._32_0
         Me.PagerToolStripMenuItem.Name = "PagerToolStripMenuItem"
-        Me.PagerToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
+        Me.PagerToolStripMenuItem.Size = New System.Drawing.Size(193, 34)
         Me.PagerToolStripMenuItem.Text = "Pager"
         '
         'FunkgerätToolStripMenuItem
         '
-        Me.FunkgerätToolStripMenuItem.Image = ELDIS.Client.My.Resources.Resources.motorola_mtp850_3l_tetra_pt911b
+        Me.FunkgerätToolStripMenuItem.Image = Global.ELDIS.Client.My.Resources.Resources.motorola_mtp850_3l_tetra_pt911b
         Me.FunkgerätToolStripMenuItem.Name = "FunkgerätToolStripMenuItem"
-        Me.FunkgerätToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
+        Me.FunkgerätToolStripMenuItem.Size = New System.Drawing.Size(193, 34)
         Me.FunkgerätToolStripMenuItem.Text = "Funkgerät"
         '
         'DisponentToolStripMenuItem
         '
         Me.DisponentToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EinsatzerfassungToolStripMenuItem})
         Me.DisponentToolStripMenuItem.Name = "DisponentToolStripMenuItem"
-        Me.DisponentToolStripMenuItem.Size = New System.Drawing.Size(73, 22)
+        Me.DisponentToolStripMenuItem.Size = New System.Drawing.Size(110, 29)
         Me.DisponentToolStripMenuItem.Text = "Disponent"
         '
         'EinsatzerfassungToolStripMenuItem
         '
         Me.EinsatzerfassungToolStripMenuItem.Name = "EinsatzerfassungToolStripMenuItem"
-        Me.EinsatzerfassungToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
+        Me.EinsatzerfassungToolStripMenuItem.Size = New System.Drawing.Size(245, 34)
         Me.EinsatzerfassungToolStripMenuItem.Text = "Einsatzerfassung"
         '
         'AdminToolStripMenuItem
         '
         Me.AdminToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NeuenSISBenutzerToolStripMenuItem})
         Me.AdminToolStripMenuItem.Name = "AdminToolStripMenuItem"
-        Me.AdminToolStripMenuItem.Size = New System.Drawing.Size(55, 22)
+        Me.AdminToolStripMenuItem.Size = New System.Drawing.Size(81, 29)
         Me.AdminToolStripMenuItem.Text = "Admin"
         '
         'NeuenSISBenutzerToolStripMenuItem
         '
         Me.NeuenSISBenutzerToolStripMenuItem.Name = "NeuenSISBenutzerToolStripMenuItem"
-        Me.NeuenSISBenutzerToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.NeuenSISBenutzerToolStripMenuItem.Size = New System.Drawing.Size(268, 34)
         Me.NeuenSISBenutzerToolStripMenuItem.Text = "Neuen SIS Benutzer"
         '
         'BenutzerToolStripMenuItem
         '
         Me.BenutzerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EinsatzberichtSchreibenToolStripMenuItem, Me.MeinProfilToolStripMenuItem})
         Me.BenutzerToolStripMenuItem.Name = "BenutzerToolStripMenuItem"
-        Me.BenutzerToolStripMenuItem.Size = New System.Drawing.Size(65, 22)
+        Me.BenutzerToolStripMenuItem.Size = New System.Drawing.Size(96, 29)
         Me.BenutzerToolStripMenuItem.Text = "Benutzer"
         '
         'EinsatzberichtSchreibenToolStripMenuItem
         '
         Me.EinsatzberichtSchreibenToolStripMenuItem.Name = "EinsatzberichtSchreibenToolStripMenuItem"
-        Me.EinsatzberichtSchreibenToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.EinsatzberichtSchreibenToolStripMenuItem.Size = New System.Drawing.Size(302, 34)
         Me.EinsatzberichtSchreibenToolStripMenuItem.Text = "Einsatzbericht schreiben"
         '
         'MeinProfilToolStripMenuItem
         '
         Me.MeinProfilToolStripMenuItem.Name = "MeinProfilToolStripMenuItem"
-        Me.MeinProfilToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.MeinProfilToolStripMenuItem.Size = New System.Drawing.Size(302, 34)
         Me.MeinProfilToolStripMenuItem.Text = "Mein Profil"
         '
         'eldis_tabcontrol
@@ -193,11 +193,12 @@ Partial Class hauptmenu
         Me.eldis_tabcontrol.Controls.Add(Me.eldis_einsatzerfassung)
         Me.eldis_tabcontrol.Controls.Add(Me.eldis_einsatzübersicht)
         Me.eldis_tabcontrol.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.eldis_tabcontrol.Location = New System.Drawing.Point(0, 24)
+        Me.eldis_tabcontrol.Location = New System.Drawing.Point(0, 33)
+        Me.eldis_tabcontrol.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.eldis_tabcontrol.Multiline = True
         Me.eldis_tabcontrol.Name = "eldis_tabcontrol"
         Me.eldis_tabcontrol.SelectedIndex = 0
-        Me.eldis_tabcontrol.Size = New System.Drawing.Size(1759, 834)
+        Me.eldis_tabcontrol.Size = New System.Drawing.Size(2638, 1287)
         Me.eldis_tabcontrol.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.eldis_tabcontrol.TabIndex = 1
         '
@@ -205,10 +206,11 @@ Partial Class hauptmenu
         '
         Me.tab_startseite.Controls.Add(Me.initELDIS_Label)
         Me.tab_startseite.Controls.Add(Me.initELDIS)
-        Me.tab_startseite.Location = New System.Drawing.Point(4, 22)
+        Me.tab_startseite.Location = New System.Drawing.Point(4, 29)
+        Me.tab_startseite.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tab_startseite.Name = "tab_startseite"
-        Me.tab_startseite.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
-        Me.tab_startseite.Size = New System.Drawing.Size(1751, 808)
+        Me.tab_startseite.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.tab_startseite.Size = New System.Drawing.Size(2630, 1254)
         Me.tab_startseite.TabIndex = 0
         Me.tab_startseite.Text = "Startseite"
         Me.tab_startseite.UseVisualStyleBackColor = True
@@ -221,18 +223,20 @@ Partial Class hauptmenu
         Me.initELDIS_Label.AutoSize = True
         Me.initELDIS_Label.Font = New System.Drawing.Font("Arial", 40.75!, System.Drawing.FontStyle.Bold)
         Me.initELDIS_Label.ForeColor = System.Drawing.Color.Red
-        Me.initELDIS_Label.Location = New System.Drawing.Point(426, 342)
+        Me.initELDIS_Label.Location = New System.Drawing.Point(639, 526)
+        Me.initELDIS_Label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.initELDIS_Label.Name = "initELDIS_Label"
-        Me.initELDIS_Label.Size = New System.Drawing.Size(884, 64)
+        Me.initELDIS_Label.Size = New System.Drawing.Size(1316, 95)
         Me.initELDIS_Label.TabIndex = 1
         Me.initELDIS_Label.Text = "Einsatzleitsystem wird gestartet!"
         '
         'initELDIS
         '
         Me.initELDIS.BackColor = System.Drawing.Color.Red
-        Me.initELDIS.Location = New System.Drawing.Point(385, 251)
+        Me.initELDIS.Location = New System.Drawing.Point(578, 386)
+        Me.initELDIS.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.initELDIS.Name = "initELDIS"
-        Me.initELDIS.Size = New System.Drawing.Size(964, 262)
+        Me.initELDIS.Size = New System.Drawing.Size(1446, 403)
         Me.initELDIS.TabIndex = 0
         Me.initELDIS.TabStop = False
         '
@@ -244,10 +248,11 @@ Partial Class hauptmenu
         Me.eldis_einsatzerfassung.Controls.Add(Me.einsatzerfassung_meldeundalarm)
         Me.eldis_einsatzerfassung.Controls.Add(Me.einsatzerfassung_einsatz)
         Me.eldis_einsatzerfassung.Controls.Add(Me.einsatzerfassung_controlbox)
-        Me.eldis_einsatzerfassung.Location = New System.Drawing.Point(4, 22)
+        Me.eldis_einsatzerfassung.Location = New System.Drawing.Point(4, 29)
+        Me.eldis_einsatzerfassung.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.eldis_einsatzerfassung.Name = "eldis_einsatzerfassung"
-        Me.eldis_einsatzerfassung.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
-        Me.eldis_einsatzerfassung.Size = New System.Drawing.Size(1751, 811)
+        Me.eldis_einsatzerfassung.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.eldis_einsatzerfassung.Size = New System.Drawing.Size(2630, 1254)
         Me.eldis_einsatzerfassung.TabIndex = 1
         Me.eldis_einsatzerfassung.Text = "Einsatzerfassung"
         Me.eldis_einsatzerfassung.UseVisualStyleBackColor = True
@@ -267,9 +272,11 @@ Partial Class hauptmenu
         Me.einsatzerfassung_maßnahmen.Controls.Add(Me.maßnahme_feuersirene)
         Me.einsatzerfassung_maßnahmen.Controls.Add(Me.maßnahme_proberuf)
         Me.einsatzerfassung_maßnahmen.Controls.Add(Me.maßnahme_pager)
-        Me.einsatzerfassung_maßnahmen.Location = New System.Drawing.Point(902, 360)
+        Me.einsatzerfassung_maßnahmen.Location = New System.Drawing.Point(1353, 554)
+        Me.einsatzerfassung_maßnahmen.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.einsatzerfassung_maßnahmen.Name = "einsatzerfassung_maßnahmen"
-        Me.einsatzerfassung_maßnahmen.Size = New System.Drawing.Size(841, 405)
+        Me.einsatzerfassung_maßnahmen.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.einsatzerfassung_maßnahmen.Size = New System.Drawing.Size(1262, 623)
         Me.einsatzerfassung_maßnahmen.TabIndex = 5
         Me.einsatzerfassung_maßnahmen.TabStop = False
         Me.einsatzerfassung_maßnahmen.Text = "Maßnahmen"
@@ -278,10 +285,11 @@ Partial Class hauptmenu
         '
         Me.maßnahme_record.Enabled = False
         Me.maßnahme_record.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.maßnahme_record.Image = ELDIS.Client.My.Resources.Resources.Music1
-        Me.maßnahme_record.Location = New System.Drawing.Point(257, 93)
+        Me.maßnahme_record.Image = Global.ELDIS.Client.My.Resources.Resources.Music1
+        Me.maßnahme_record.Location = New System.Drawing.Point(386, 143)
+        Me.maßnahme_record.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.maßnahme_record.Name = "maßnahme_record"
-        Me.maßnahme_record.Size = New System.Drawing.Size(37, 35)
+        Me.maßnahme_record.Size = New System.Drawing.Size(56, 54)
         Me.maßnahme_record.TabIndex = 10
         Me.maßnahme_record.UseVisualStyleBackColor = True
         '
@@ -295,11 +303,12 @@ Partial Class hauptmenu
         Me.maßnahmen_view.BackgroundColor = System.Drawing.Color.White
         Me.maßnahmen_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.maßnahmen_view.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Maßnahme, Me.Ausgeführt})
-        Me.maßnahmen_view.Location = New System.Drawing.Point(6, 134)
+        Me.maßnahmen_view.Location = New System.Drawing.Point(9, 206)
+        Me.maßnahmen_view.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.maßnahmen_view.Name = "maßnahmen_view"
         Me.maßnahmen_view.ReadOnly = True
         Me.maßnahmen_view.RowHeadersWidth = 62
-        Me.maßnahmen_view.Size = New System.Drawing.Size(829, 270)
+        Me.maßnahmen_view.Size = New System.Drawing.Size(1244, 415)
         Me.maßnahmen_view.TabIndex = 9
         '
         'Maßnahme
@@ -320,10 +329,11 @@ Partial Class hauptmenu
         '
         Me.Button5.Enabled = False
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Image = ELDIS.Client.My.Resources.Resources.cog
-        Me.Button5.Location = New System.Drawing.Point(214, 93)
+        Me.Button5.Image = Global.ELDIS.Client.My.Resources.Resources.cog
+        Me.Button5.Location = New System.Drawing.Point(321, 143)
+        Me.Button5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(37, 35)
+        Me.Button5.Size = New System.Drawing.Size(56, 54)
         Me.Button5.TabIndex = 8
         Me.Button5.UseVisualStyleBackColor = True
         '
@@ -331,10 +341,11 @@ Partial Class hauptmenu
         '
         Me.Button4.Enabled = False
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Image = ELDIS.Client.My.Resources.Resources.folder_page
-        Me.Button4.Location = New System.Drawing.Point(171, 93)
+        Me.Button4.Image = Global.ELDIS.Client.My.Resources.Resources.folder_page
+        Me.Button4.Location = New System.Drawing.Point(256, 143)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(37, 35)
+        Me.Button4.Size = New System.Drawing.Size(56, 54)
         Me.Button4.TabIndex = 7
         Me.Button4.UseVisualStyleBackColor = True
         '
@@ -342,10 +353,11 @@ Partial Class hauptmenu
         '
         Me.Button3.Enabled = False
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Image = ELDIS.Client.My.Resources.Resources.Delete
-        Me.Button3.Location = New System.Drawing.Point(92, 93)
+        Me.Button3.Image = Global.ELDIS.Client.My.Resources.Resources.Delete
+        Me.Button3.Location = New System.Drawing.Point(138, 143)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(37, 35)
+        Me.Button3.Size = New System.Drawing.Size(56, 54)
         Me.Button3.TabIndex = 6
         Me.Button3.UseVisualStyleBackColor = True
         '
@@ -353,10 +365,11 @@ Partial Class hauptmenu
         '
         Me.maßnahme_mehr.Enabled = False
         Me.maßnahme_mehr.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.maßnahme_mehr.Image = ELDIS.Client.My.Resources.Resources.Create
-        Me.maßnahme_mehr.Location = New System.Drawing.Point(49, 93)
+        Me.maßnahme_mehr.Image = Global.ELDIS.Client.My.Resources.Resources.Create
+        Me.maßnahme_mehr.Location = New System.Drawing.Point(74, 143)
+        Me.maßnahme_mehr.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.maßnahme_mehr.Name = "maßnahme_mehr"
-        Me.maßnahme_mehr.Size = New System.Drawing.Size(37, 35)
+        Me.maßnahme_mehr.Size = New System.Drawing.Size(56, 54)
         Me.maßnahme_mehr.TabIndex = 5
         Me.maßnahme_mehr.UseVisualStyleBackColor = True
         '
@@ -364,10 +377,11 @@ Partial Class hauptmenu
         '
         Me.maßnahme_ausführen.Enabled = False
         Me.maßnahme_ausführen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.maßnahme_ausführen.Image = ELDIS.Client.My.Resources.Resources.Application
-        Me.maßnahme_ausführen.Location = New System.Drawing.Point(6, 93)
+        Me.maßnahme_ausführen.Image = Global.ELDIS.Client.My.Resources.Resources.Application
+        Me.maßnahme_ausführen.Location = New System.Drawing.Point(9, 143)
+        Me.maßnahme_ausführen.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.maßnahme_ausführen.Name = "maßnahme_ausführen"
-        Me.maßnahme_ausführen.Size = New System.Drawing.Size(37, 35)
+        Me.maßnahme_ausführen.Size = New System.Drawing.Size(56, 54)
         Me.maßnahme_ausführen.TabIndex = 4
         Me.maßnahme_ausführen.UseVisualStyleBackColor = True
         '
@@ -375,9 +389,10 @@ Partial Class hauptmenu
         '
         Me.maßnahme_probesirene.AutoSize = True
         Me.maßnahme_probesirene.Enabled = False
-        Me.maßnahme_probesirene.Location = New System.Drawing.Point(6, 70)
+        Me.maßnahme_probesirene.Location = New System.Drawing.Point(9, 108)
+        Me.maßnahme_probesirene.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.maßnahme_probesirene.Name = "maßnahme_probesirene"
-        Me.maßnahme_probesirene.Size = New System.Drawing.Size(92, 17)
+        Me.maßnahme_probesirene.Size = New System.Drawing.Size(136, 24)
         Me.maßnahme_probesirene.TabIndex = 3
         Me.maßnahme_probesirene.TabStop = True
         Me.maßnahme_probesirene.Text = "Probe (Sirene)"
@@ -387,9 +402,10 @@ Partial Class hauptmenu
         '
         Me.maßnahme_feuersirene.AutoSize = True
         Me.maßnahme_feuersirene.Enabled = False
-        Me.maßnahme_feuersirene.Location = New System.Drawing.Point(6, 53)
+        Me.maßnahme_feuersirene.Location = New System.Drawing.Point(9, 82)
+        Me.maßnahme_feuersirene.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.maßnahme_feuersirene.Name = "maßnahme_feuersirene"
-        Me.maßnahme_feuersirene.Size = New System.Drawing.Size(91, 17)
+        Me.maßnahme_feuersirene.Size = New System.Drawing.Size(136, 24)
         Me.maßnahme_feuersirene.TabIndex = 2
         Me.maßnahme_feuersirene.TabStop = True
         Me.maßnahme_feuersirene.Text = "Feuer (Sirene)"
@@ -399,9 +415,10 @@ Partial Class hauptmenu
         '
         Me.maßnahme_proberuf.AutoSize = True
         Me.maßnahme_proberuf.Enabled = False
-        Me.maßnahme_proberuf.Location = New System.Drawing.Point(6, 36)
+        Me.maßnahme_proberuf.Location = New System.Drawing.Point(9, 55)
+        Me.maßnahme_proberuf.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.maßnahme_proberuf.Name = "maßnahme_proberuf"
-        Me.maßnahme_proberuf.Size = New System.Drawing.Size(65, 17)
+        Me.maßnahme_proberuf.Size = New System.Drawing.Size(95, 24)
         Me.maßnahme_proberuf.TabIndex = 1
         Me.maßnahme_proberuf.TabStop = True
         Me.maßnahme_proberuf.Text = "Proberuf"
@@ -411,9 +428,10 @@ Partial Class hauptmenu
         '
         Me.maßnahme_pager.AutoSize = True
         Me.maßnahme_pager.Enabled = False
-        Me.maßnahme_pager.Location = New System.Drawing.Point(6, 19)
+        Me.maßnahme_pager.Location = New System.Drawing.Point(9, 29)
+        Me.maßnahme_pager.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.maßnahme_pager.Name = "maßnahme_pager"
-        Me.maßnahme_pager.Size = New System.Drawing.Size(167, 17)
+        Me.maßnahme_pager.Size = New System.Drawing.Size(252, 24)
         Me.maßnahme_pager.TabIndex = 0
         Me.maßnahme_pager.TabStop = True
         Me.maßnahme_pager.Text = "Stiller Alarm (Pageralamierung)"
@@ -427,9 +445,11 @@ Partial Class hauptmenu
         Me.einsatzerfassung_sonstiges.Controls.Add(Me.Label8)
         Me.einsatzerfassung_sonstiges.Controls.Add(Me.Label7)
         Me.einsatzerfassung_sonstiges.Controls.Add(Me.sonstiges_intern)
-        Me.einsatzerfassung_sonstiges.Location = New System.Drawing.Point(8, 360)
+        Me.einsatzerfassung_sonstiges.Location = New System.Drawing.Point(12, 554)
+        Me.einsatzerfassung_sonstiges.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.einsatzerfassung_sonstiges.Name = "einsatzerfassung_sonstiges"
-        Me.einsatzerfassung_sonstiges.Size = New System.Drawing.Size(885, 294)
+        Me.einsatzerfassung_sonstiges.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.einsatzerfassung_sonstiges.Size = New System.Drawing.Size(1328, 452)
         Me.einsatzerfassung_sonstiges.TabIndex = 4
         Me.einsatzerfassung_sonstiges.TabStop = False
         Me.einsatzerfassung_sonstiges.Text = "Sonstiges"
@@ -440,19 +460,21 @@ Partial Class hauptmenu
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.sonstiges_extern.Enabled = False
-        Me.sonstiges_extern.Location = New System.Drawing.Point(501, 36)
+        Me.sonstiges_extern.Location = New System.Drawing.Point(752, 55)
+        Me.sonstiges_extern.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.sonstiges_extern.Multiline = True
         Me.sonstiges_extern.Name = "sonstiges_extern"
-        Me.sonstiges_extern.Size = New System.Drawing.Size(360, 252)
+        Me.sonstiges_extern.Size = New System.Drawing.Size(538, 386)
         Me.sonstiges_extern.TabIndex = 17
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label8.Location = New System.Drawing.Point(6, 16)
+        Me.Label8.Location = New System.Drawing.Point(9, 25)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(150, 17)
+        Me.Label8.Size = New System.Drawing.Size(208, 25)
         Me.Label8.TabIndex = 16
         Me.Label8.Text = "Interne-Dispo-Notizen:"
         '
@@ -460,9 +482,10 @@ Partial Class hauptmenu
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label7.Location = New System.Drawing.Point(498, 16)
+        Me.Label7.Location = New System.Drawing.Point(747, 25)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(154, 17)
+        Me.Label7.Size = New System.Drawing.Size(215, 25)
         Me.Label7.TabIndex = 18
         Me.Label7.Text = "Externe-Dispo-Notizen:"
         '
@@ -471,10 +494,11 @@ Partial Class hauptmenu
         Me.sonstiges_intern.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.sonstiges_intern.Enabled = False
-        Me.sonstiges_intern.Location = New System.Drawing.Point(9, 36)
+        Me.sonstiges_intern.Location = New System.Drawing.Point(14, 55)
+        Me.sonstiges_intern.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.sonstiges_intern.Multiline = True
         Me.sonstiges_intern.Name = "sonstiges_intern"
-        Me.sonstiges_intern.Size = New System.Drawing.Size(483, 252)
+        Me.sonstiges_intern.Size = New System.Drawing.Size(722, 386)
         Me.sonstiges_intern.TabIndex = 15
         '
         'einsatzerfassung_einsatzort
@@ -493,9 +517,11 @@ Partial Class hauptmenu
         Me.einsatzerfassung_einsatzort.Controls.Add(Me.Label2)
         Me.einsatzerfassung_einsatzort.Controls.Add(Me.einsatzort_straße)
         Me.einsatzerfassung_einsatzort.Controls.Add(Me.Label1)
-        Me.einsatzerfassung_einsatzort.Location = New System.Drawing.Point(8, 188)
+        Me.einsatzerfassung_einsatzort.Location = New System.Drawing.Point(12, 289)
+        Me.einsatzerfassung_einsatzort.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.einsatzerfassung_einsatzort.Name = "einsatzerfassung_einsatzort"
-        Me.einsatzerfassung_einsatzort.Size = New System.Drawing.Size(1735, 166)
+        Me.einsatzerfassung_einsatzort.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.einsatzerfassung_einsatzort.Size = New System.Drawing.Size(2602, 255)
         Me.einsatzerfassung_einsatzort.TabIndex = 3
         Me.einsatzerfassung_einsatzort.TabStop = False
         Me.einsatzerfassung_einsatzort.Text = "Einsatzort"
@@ -505,18 +531,20 @@ Partial Class hauptmenu
         Me.einsatzort_objekt.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.einsatzort_objekt.Enabled = False
-        Me.einsatzort_objekt.Location = New System.Drawing.Point(645, 88)
+        Me.einsatzort_objekt.Location = New System.Drawing.Point(968, 135)
+        Me.einsatzort_objekt.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.einsatzort_objekt.Name = "einsatzort_objekt"
-        Me.einsatzort_objekt.Size = New System.Drawing.Size(1084, 20)
+        Me.einsatzort_objekt.Size = New System.Drawing.Size(1624, 26)
         Me.einsatzort_objekt.TabIndex = 13
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label6.Location = New System.Drawing.Point(637, 68)
+        Me.Label6.Location = New System.Drawing.Point(956, 105)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(53, 17)
+        Me.Label6.Size = New System.Drawing.Size(75, 25)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Objekt:"
         '
@@ -524,18 +552,20 @@ Partial Class hauptmenu
         '
         Me.einsatzort_stadt.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.einsatzort_stadt.Enabled = False
-        Me.einsatzort_stadt.Location = New System.Drawing.Point(499, 88)
+        Me.einsatzort_stadt.Location = New System.Drawing.Point(748, 135)
+        Me.einsatzort_stadt.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.einsatzort_stadt.Name = "einsatzort_stadt"
-        Me.einsatzort_stadt.Size = New System.Drawing.Size(138, 20)
+        Me.einsatzort_stadt.Size = New System.Drawing.Size(205, 26)
         Me.einsatzort_stadt.TabIndex = 11
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label5.Location = New System.Drawing.Point(494, 68)
+        Me.Label5.Location = New System.Drawing.Point(741, 105)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(45, 17)
+        Me.Label5.Size = New System.Drawing.Size(64, 25)
         Me.Label5.TabIndex = 12
         Me.Label5.Text = "Stadt:"
         '
@@ -544,18 +574,20 @@ Partial Class hauptmenu
         Me.einsatzort_postleitzahl.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.einsatzort_postleitzahl.Enabled = False
-        Me.einsatzort_postleitzahl.Location = New System.Drawing.Point(9, 88)
+        Me.einsatzort_postleitzahl.Location = New System.Drawing.Point(14, 135)
+        Me.einsatzort_postleitzahl.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.einsatzort_postleitzahl.Name = "einsatzort_postleitzahl"
-        Me.einsatzort_postleitzahl.Size = New System.Drawing.Size(483, 20)
+        Me.einsatzort_postleitzahl.Size = New System.Drawing.Size(722, 26)
         Me.einsatzort_postleitzahl.TabIndex = 9
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label4.Location = New System.Drawing.Point(6, 68)
+        Me.Label4.Location = New System.Drawing.Point(9, 105)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(84, 17)
+        Me.Label4.Size = New System.Drawing.Size(117, 25)
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "Postleitzahl:"
         '
@@ -564,18 +596,20 @@ Partial Class hauptmenu
         Me.einsatzort_abschnitt.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.einsatzort_abschnitt.Enabled = False
-        Me.einsatzort_abschnitt.Location = New System.Drawing.Point(645, 45)
+        Me.einsatzort_abschnitt.Location = New System.Drawing.Point(968, 69)
+        Me.einsatzort_abschnitt.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.einsatzort_abschnitt.Name = "einsatzort_abschnitt"
-        Me.einsatzort_abschnitt.Size = New System.Drawing.Size(1084, 20)
+        Me.einsatzort_abschnitt.Size = New System.Drawing.Size(1624, 26)
         Me.einsatzort_abschnitt.TabIndex = 7
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label3.Location = New System.Drawing.Point(637, 25)
+        Me.Label3.Location = New System.Drawing.Point(956, 38)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(70, 17)
+        Me.Label3.Size = New System.Drawing.Size(99, 25)
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Abschnitt:"
         '
@@ -583,18 +617,20 @@ Partial Class hauptmenu
         '
         Me.einsatzort_nr.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.einsatzort_nr.Enabled = False
-        Me.einsatzort_nr.Location = New System.Drawing.Point(499, 45)
+        Me.einsatzort_nr.Location = New System.Drawing.Point(748, 69)
+        Me.einsatzort_nr.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.einsatzort_nr.Name = "einsatzort_nr"
-        Me.einsatzort_nr.Size = New System.Drawing.Size(138, 20)
+        Me.einsatzort_nr.Size = New System.Drawing.Size(205, 26)
         Me.einsatzort_nr.TabIndex = 5
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label2.Location = New System.Drawing.Point(494, 25)
+        Me.Label2.Location = New System.Drawing.Point(741, 38)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(27, 17)
+        Me.Label2.Size = New System.Drawing.Size(38, 25)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Nr:"
         '
@@ -603,18 +639,20 @@ Partial Class hauptmenu
         Me.einsatzort_straße.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.einsatzort_straße.Enabled = False
-        Me.einsatzort_straße.Location = New System.Drawing.Point(9, 45)
+        Me.einsatzort_straße.Location = New System.Drawing.Point(14, 69)
+        Me.einsatzort_straße.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.einsatzort_straße.Name = "einsatzort_straße"
-        Me.einsatzort_straße.Size = New System.Drawing.Size(483, 20)
+        Me.einsatzort_straße.Size = New System.Drawing.Size(722, 26)
         Me.einsatzort_straße.TabIndex = 4
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label1.Location = New System.Drawing.Point(6, 25)
+        Me.Label1.Location = New System.Drawing.Point(9, 38)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(55, 17)
+        Me.Label1.Size = New System.Drawing.Size(77, 25)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Straße:"
         '
@@ -626,9 +664,11 @@ Partial Class hauptmenu
         Me.einsatzerfassung_meldeundalarm.Controls.Add(Me.alarmundmelde_meldebildbox)
         Me.einsatzerfassung_meldeundalarm.Controls.Add(Me.alarmundmelde_alarmstufe)
         Me.einsatzerfassung_meldeundalarm.Controls.Add(Me.alarmundmelde_alarmstufebox)
-        Me.einsatzerfassung_meldeundalarm.Location = New System.Drawing.Point(8, 75)
+        Me.einsatzerfassung_meldeundalarm.Location = New System.Drawing.Point(12, 115)
+        Me.einsatzerfassung_meldeundalarm.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.einsatzerfassung_meldeundalarm.Name = "einsatzerfassung_meldeundalarm"
-        Me.einsatzerfassung_meldeundalarm.Size = New System.Drawing.Size(1735, 107)
+        Me.einsatzerfassung_meldeundalarm.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.einsatzerfassung_meldeundalarm.Size = New System.Drawing.Size(2602, 165)
         Me.einsatzerfassung_meldeundalarm.TabIndex = 2
         Me.einsatzerfassung_meldeundalarm.TabStop = False
         Me.einsatzerfassung_meldeundalarm.Text = "Alarmstufe und Meldebild"
@@ -637,9 +677,10 @@ Partial Class hauptmenu
         '
         Me.alarmundmelde_meldebild.AutoSize = True
         Me.alarmundmelde_meldebild.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.alarmundmelde_meldebild.Location = New System.Drawing.Point(891, 28)
+        Me.alarmundmelde_meldebild.Location = New System.Drawing.Point(1336, 43)
+        Me.alarmundmelde_meldebild.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.alarmundmelde_meldebild.Name = "alarmundmelde_meldebild"
-        Me.alarmundmelde_meldebild.Size = New System.Drawing.Size(72, 17)
+        Me.alarmundmelde_meldebild.Size = New System.Drawing.Size(102, 25)
         Me.alarmundmelde_meldebild.TabIndex = 3
         Me.alarmundmelde_meldebild.Text = "Meldebild:"
         '
@@ -651,18 +692,20 @@ Partial Class hauptmenu
         Me.alarmundmelde_meldebildbox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.alarmundmelde_meldebildbox.Enabled = False
         Me.alarmundmelde_meldebildbox.FormattingEnabled = True
-        Me.alarmundmelde_meldebildbox.Location = New System.Drawing.Point(891, 48)
+        Me.alarmundmelde_meldebildbox.Location = New System.Drawing.Point(1336, 74)
+        Me.alarmundmelde_meldebildbox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.alarmundmelde_meldebildbox.Name = "alarmundmelde_meldebildbox"
-        Me.alarmundmelde_meldebildbox.Size = New System.Drawing.Size(832, 21)
+        Me.alarmundmelde_meldebildbox.Size = New System.Drawing.Size(1246, 28)
         Me.alarmundmelde_meldebildbox.TabIndex = 2
         '
         'alarmundmelde_alarmstufe
         '
         Me.alarmundmelde_alarmstufe.AutoSize = True
         Me.alarmundmelde_alarmstufe.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.alarmundmelde_alarmstufe.Location = New System.Drawing.Point(6, 28)
+        Me.alarmundmelde_alarmstufe.Location = New System.Drawing.Point(9, 43)
+        Me.alarmundmelde_alarmstufe.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.alarmundmelde_alarmstufe.Name = "alarmundmelde_alarmstufe"
-        Me.alarmundmelde_alarmstufe.Size = New System.Drawing.Size(79, 17)
+        Me.alarmundmelde_alarmstufe.Size = New System.Drawing.Size(111, 25)
         Me.alarmundmelde_alarmstufe.TabIndex = 1
         Me.alarmundmelde_alarmstufe.Text = "Alarmstufe:"
         '
@@ -672,9 +715,10 @@ Partial Class hauptmenu
         Me.alarmundmelde_alarmstufebox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.alarmundmelde_alarmstufebox.Enabled = False
         Me.alarmundmelde_alarmstufebox.FormattingEnabled = True
-        Me.alarmundmelde_alarmstufebox.Location = New System.Drawing.Point(9, 48)
+        Me.alarmundmelde_alarmstufebox.Location = New System.Drawing.Point(14, 74)
+        Me.alarmundmelde_alarmstufebox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.alarmundmelde_alarmstufebox.Name = "alarmundmelde_alarmstufebox"
-        Me.alarmundmelde_alarmstufebox.Size = New System.Drawing.Size(876, 21)
+        Me.alarmundmelde_alarmstufebox.Size = New System.Drawing.Size(1312, 28)
         Me.alarmundmelde_alarmstufebox.TabIndex = 0
         '
         'einsatzerfassung_einsatz
@@ -685,9 +729,11 @@ Partial Class hauptmenu
         Me.einsatzerfassung_einsatz.Controls.Add(Me.einsatz_einsatznummer)
         Me.einsatzerfassung_einsatz.Controls.Add(Me.status_box)
         Me.einsatzerfassung_einsatz.Controls.Add(Me.einsatz_status)
-        Me.einsatzerfassung_einsatz.Location = New System.Drawing.Point(8, 6)
+        Me.einsatzerfassung_einsatz.Location = New System.Drawing.Point(12, 9)
+        Me.einsatzerfassung_einsatz.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.einsatzerfassung_einsatz.Name = "einsatzerfassung_einsatz"
-        Me.einsatzerfassung_einsatz.Size = New System.Drawing.Size(1735, 63)
+        Me.einsatzerfassung_einsatz.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.einsatzerfassung_einsatz.Size = New System.Drawing.Size(2602, 97)
         Me.einsatzerfassung_einsatz.TabIndex = 1
         Me.einsatzerfassung_einsatz.TabStop = False
         Me.einsatzerfassung_einsatz.Text = "Einsatz"
@@ -695,36 +741,40 @@ Partial Class hauptmenu
         'einsatznummer_box
         '
         Me.einsatznummer_box.Enabled = False
-        Me.einsatznummer_box.Location = New System.Drawing.Point(313, 22)
+        Me.einsatznummer_box.Location = New System.Drawing.Point(470, 34)
+        Me.einsatznummer_box.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.einsatznummer_box.Name = "einsatznummer_box"
-        Me.einsatznummer_box.Size = New System.Drawing.Size(169, 20)
+        Me.einsatznummer_box.Size = New System.Drawing.Size(252, 26)
         Me.einsatznummer_box.TabIndex = 3
         '
         'einsatz_einsatznummer
         '
         Me.einsatz_einsatznummer.AutoSize = True
         Me.einsatz_einsatznummer.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.einsatz_einsatznummer.Location = New System.Drawing.Point(203, 23)
+        Me.einsatz_einsatznummer.Location = New System.Drawing.Point(304, 35)
+        Me.einsatz_einsatznummer.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.einsatz_einsatznummer.Name = "einsatz_einsatznummer"
-        Me.einsatz_einsatznummer.Size = New System.Drawing.Size(109, 17)
+        Me.einsatz_einsatznummer.Size = New System.Drawing.Size(153, 25)
         Me.einsatz_einsatznummer.TabIndex = 2
         Me.einsatz_einsatznummer.Text = "Einsatznummer:"
         '
         'status_box
         '
         Me.status_box.Enabled = False
-        Me.status_box.Location = New System.Drawing.Point(59, 22)
+        Me.status_box.Location = New System.Drawing.Point(88, 34)
+        Me.status_box.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.status_box.Name = "status_box"
-        Me.status_box.Size = New System.Drawing.Size(138, 20)
+        Me.status_box.Size = New System.Drawing.Size(205, 26)
         Me.status_box.TabIndex = 1
         '
         'einsatz_status
         '
         Me.einsatz_status.AutoSize = True
         Me.einsatz_status.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.einsatz_status.Location = New System.Drawing.Point(6, 21)
+        Me.einsatz_status.Location = New System.Drawing.Point(9, 32)
+        Me.einsatz_status.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.einsatz_status.Name = "einsatz_status"
-        Me.einsatz_status.Size = New System.Drawing.Size(52, 17)
+        Me.einsatz_status.Size = New System.Drawing.Size(74, 25)
         Me.einsatz_status.TabIndex = 0
         Me.einsatz_status.Text = "Status:"
         '
@@ -737,9 +787,11 @@ Partial Class hauptmenu
         Me.einsatzerfassung_controlbox.Controls.Add(Me.controlbox_ende)
         Me.einsatzerfassung_controlbox.Controls.Add(Me.controlbox_speichern)
         Me.einsatzerfassung_controlbox.Controls.Add(Me.controlbox_neweinsatz)
-        Me.einsatzerfassung_controlbox.Location = New System.Drawing.Point(8, 655)
+        Me.einsatzerfassung_controlbox.Location = New System.Drawing.Point(12, 1008)
+        Me.einsatzerfassung_controlbox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.einsatzerfassung_controlbox.Name = "einsatzerfassung_controlbox"
-        Me.einsatzerfassung_controlbox.Size = New System.Drawing.Size(885, 110)
+        Me.einsatzerfassung_controlbox.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.einsatzerfassung_controlbox.Size = New System.Drawing.Size(1328, 169)
         Me.einsatzerfassung_controlbox.TabIndex = 0
         Me.einsatzerfassung_controlbox.TabStop = False
         '
@@ -748,9 +800,10 @@ Partial Class hauptmenu
         Me.Button6.BackColor = System.Drawing.Color.Orange
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button6.ForeColor = System.Drawing.Color.Black
-        Me.Button6.Location = New System.Drawing.Point(365, 41)
+        Me.Button6.Location = New System.Drawing.Point(548, 63)
+        Me.Button6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(114, 39)
+        Me.Button6.Size = New System.Drawing.Size(171, 60)
         Me.Button6.TabIndex = 4
         Me.Button6.Text = "Weglegen"
         Me.Button6.UseVisualStyleBackColor = False
@@ -760,9 +813,10 @@ Partial Class hauptmenu
         Me.controlbox_openeinsatz.BackColor = System.Drawing.Color.DarkGreen
         Me.controlbox_openeinsatz.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.controlbox_openeinsatz.ForeColor = System.Drawing.Color.Black
-        Me.controlbox_openeinsatz.Location = New System.Drawing.Point(485, 41)
+        Me.controlbox_openeinsatz.Location = New System.Drawing.Point(728, 63)
+        Me.controlbox_openeinsatz.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.controlbox_openeinsatz.Name = "controlbox_openeinsatz"
-        Me.controlbox_openeinsatz.Size = New System.Drawing.Size(114, 39)
+        Me.controlbox_openeinsatz.Size = New System.Drawing.Size(171, 60)
         Me.controlbox_openeinsatz.TabIndex = 3
         Me.controlbox_openeinsatz.Text = "Öffnen"
         Me.controlbox_openeinsatz.UseVisualStyleBackColor = False
@@ -772,9 +826,10 @@ Partial Class hauptmenu
         Me.controlbox_ende.BackColor = System.Drawing.Color.DarkSlateBlue
         Me.controlbox_ende.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.controlbox_ende.ForeColor = System.Drawing.Color.Black
-        Me.controlbox_ende.Location = New System.Drawing.Point(246, 41)
+        Me.controlbox_ende.Location = New System.Drawing.Point(369, 63)
+        Me.controlbox_ende.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.controlbox_ende.Name = "controlbox_ende"
-        Me.controlbox_ende.Size = New System.Drawing.Size(114, 39)
+        Me.controlbox_ende.Size = New System.Drawing.Size(171, 60)
         Me.controlbox_ende.TabIndex = 2
         Me.controlbox_ende.Text = "Einsatz Ende"
         Me.controlbox_ende.UseVisualStyleBackColor = False
@@ -784,9 +839,10 @@ Partial Class hauptmenu
         Me.controlbox_speichern.BackColor = System.Drawing.Color.Crimson
         Me.controlbox_speichern.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.controlbox_speichern.ForeColor = System.Drawing.Color.Black
-        Me.controlbox_speichern.Location = New System.Drawing.Point(126, 41)
+        Me.controlbox_speichern.Location = New System.Drawing.Point(189, 63)
+        Me.controlbox_speichern.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.controlbox_speichern.Name = "controlbox_speichern"
-        Me.controlbox_speichern.Size = New System.Drawing.Size(114, 39)
+        Me.controlbox_speichern.Size = New System.Drawing.Size(171, 60)
         Me.controlbox_speichern.TabIndex = 1
         Me.controlbox_speichern.Text = "Speichern"
         Me.controlbox_speichern.UseVisualStyleBackColor = False
@@ -796,9 +852,10 @@ Partial Class hauptmenu
         Me.controlbox_neweinsatz.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.controlbox_neweinsatz.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.controlbox_neweinsatz.ForeColor = System.Drawing.Color.Black
-        Me.controlbox_neweinsatz.Location = New System.Drawing.Point(6, 41)
+        Me.controlbox_neweinsatz.Location = New System.Drawing.Point(9, 63)
+        Me.controlbox_neweinsatz.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.controlbox_neweinsatz.Name = "controlbox_neweinsatz"
-        Me.controlbox_neweinsatz.Size = New System.Drawing.Size(114, 39)
+        Me.controlbox_neweinsatz.Size = New System.Drawing.Size(171, 60)
         Me.controlbox_neweinsatz.TabIndex = 0
         Me.controlbox_neweinsatz.Text = "Einsatz erzeugen"
         Me.controlbox_neweinsatz.UseVisualStyleBackColor = False
@@ -807,10 +864,11 @@ Partial Class hauptmenu
         '
         Me.eldis_einsatzübersicht.Controls.Add(Me.einsatzübersicht_box)
         Me.eldis_einsatzübersicht.Controls.Add(Me.einsatzliste)
-        Me.eldis_einsatzübersicht.Location = New System.Drawing.Point(4, 22)
+        Me.eldis_einsatzübersicht.Location = New System.Drawing.Point(4, 29)
+        Me.eldis_einsatzübersicht.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.eldis_einsatzübersicht.Name = "eldis_einsatzübersicht"
-        Me.eldis_einsatzübersicht.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
-        Me.eldis_einsatzübersicht.Size = New System.Drawing.Size(1751, 811)
+        Me.eldis_einsatzübersicht.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.eldis_einsatzübersicht.Size = New System.Drawing.Size(2630, 1254)
         Me.eldis_einsatzübersicht.TabIndex = 2
         Me.eldis_einsatzübersicht.Text = "Einsatzübersicht"
         Me.eldis_einsatzübersicht.UseVisualStyleBackColor = True
@@ -819,9 +877,11 @@ Partial Class hauptmenu
         '
         Me.einsatzübersicht_box.Controls.Add(Me.Button2)
         Me.einsatzübersicht_box.Controls.Add(Me.Button1)
-        Me.einsatzübersicht_box.Location = New System.Drawing.Point(8, 3)
+        Me.einsatzübersicht_box.Location = New System.Drawing.Point(12, 5)
+        Me.einsatzübersicht_box.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.einsatzübersicht_box.Name = "einsatzübersicht_box"
-        Me.einsatzübersicht_box.Size = New System.Drawing.Size(1740, 135)
+        Me.einsatzübersicht_box.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.einsatzübersicht_box.Size = New System.Drawing.Size(2610, 208)
         Me.einsatzübersicht_box.TabIndex = 1
         Me.einsatzübersicht_box.TabStop = False
         '
@@ -831,10 +891,11 @@ Partial Class hauptmenu
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Image = ELDIS.Client.My.Resources.Resources.Application
-        Me.Button2.Location = New System.Drawing.Point(136, 33)
+        Me.Button2.Image = Global.ELDIS.Client.My.Resources.Resources.Application
+        Me.Button2.Location = New System.Drawing.Point(204, 51)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(125, 96)
+        Me.Button2.Size = New System.Drawing.Size(188, 148)
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "Aktualisieren"
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -846,10 +907,11 @@ Partial Class hauptmenu
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Image = ELDIS.Client.My.Resources.Resources.application_add
-        Me.Button1.Location = New System.Drawing.Point(6, 19)
+        Me.Button1.Image = Global.ELDIS.Client.My.Resources.Resources.application_add
+        Me.Button1.Location = New System.Drawing.Point(9, 29)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(124, 110)
+        Me.Button1.Size = New System.Drawing.Size(186, 169)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Neu"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -865,11 +927,12 @@ Partial Class hauptmenu
         Me.einsatzliste.BackgroundColor = System.Drawing.Color.White
         Me.einsatzliste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.einsatzliste.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.einsatzliste.Location = New System.Drawing.Point(3, 147)
+        Me.einsatzliste.Location = New System.Drawing.Point(4, 232)
+        Me.einsatzliste.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.einsatzliste.Name = "einsatzliste"
         Me.einsatzliste.ReadOnly = True
         Me.einsatzliste.RowHeadersWidth = 62
-        Me.einsatzliste.Size = New System.Drawing.Size(1745, 661)
+        Me.einsatzliste.Size = New System.Drawing.Size(2622, 1017)
         Me.einsatzliste.TabIndex = 0
         '
         'initELDIS_timer
@@ -879,14 +942,13 @@ Partial Class hauptmenu
         '
         'hauptmenu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1759, 858)
+        Me.ClientSize = New System.Drawing.Size(2638, 1320)
         Me.Controls.Add(Me.eldis_tabcontrol)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "hauptmenu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ELDIS"

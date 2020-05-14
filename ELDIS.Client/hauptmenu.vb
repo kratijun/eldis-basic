@@ -5,12 +5,6 @@ Imports MySql.Data.MySqlClient
 Imports System.Text
 
 Public Class hauptmenu
-    Private stream As NetworkStream
-    Private streamw As StreamWriter
-    Private streamr As StreamReader
-    Private client As New TcpClient
-    Private t As New Threading.Thread(AddressOf Listen)
-    Private Delegate Sub DAddItem(ByVal s As String)
     Private nick As String = My.Settings.benutzername
     Dim Uhrzeit As String
 
@@ -29,6 +23,9 @@ Public Class hauptmenu
     Dim xcoord As Double
     Dim ycoord As Double
     Dim bar As String
+    Dim sirene As Boolean
+    Dim probe_sirene As Boolean
+    Dim prefix As String
 
 
 
@@ -39,68 +36,20 @@ Public Class hauptmenu
 
 
     Private Sub hauptmenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Try
-            client.Connect(configModule.ELDISServerIP, configModule.ELDISServerPort) ' hier die ip des servers eintragen. 
-            ' da dieser beim testen wohl lokal läuft, hier die loopback-ip 127.0.0.1.
-            If client.Connected Then
-                stream = client.GetStream
-                streamw = New StreamWriter(stream)
-                streamr = New StreamReader(stream)
-                streamw.WriteLine(nick) ' das ist optional.
-                streamw.Flush()
-                t.Start()
-            Else
-                MessageBox.Show("Verbindung zum Server nicht möglich!")
-                Application.Exit()
-            End If
-        Catch ex As Exception
-            MessageBox.Show("Verbindung zum Server nicht möglich!")
-            Application.Exit()
-        End Try
-
-
+        eldisModule.ConnectToELDIS()
+        emergencyModule.GetEinsatze()
         AlarmUhrzeit = DateTime.Now.ToString("dd/MM/yyyy: " & DateTime.Now.ToString("HH:mm:ss"))
         Me.Text = "ELDIS @" & My.Settings.benutzername & " [" & Me.GetType.Assembly.GetName.Version.ToString & "]"
-        conn = New MySqlConnection()
-        conn.ConnectionString = ("server=" & configModule.mysqlserver & " ;userid=" & configModule.mysqluser & ";password=" & configModule.mysqlpasswort & ";database=" & configModule.mysqldatabase & "")
-        GetEinsatze()
         Dim Uhrzeit = DateTime.Now.ToString("HH:mm:ss") & " Uhr | "
-
-        If My.Settings.usertype = "user" Then
-            eldis_tabcontrol.TabPages.Remove(eldis_einsatzerfassung)
-            eldis_tabcontrol.TabPages.Remove(eldis_einsatzübersicht)
-            DisponentToolStripMenuItem.Visible = False
-            AdminToolStripMenuItem.Visible = False
-        End If
-
-        If My.Settings.usertype = "admin" Then
-            AdminToolStripMenuItem.Visible = True
-        End If
-
-        If My.Settings.usertype = "disponent" Then
-            DisponentToolStripMenuItem.Visible = True
-            AdminToolStripMenuItem.Visible = False
-        End If
         initELDIS.Dock = DockStyle.Fill
         initELDIS.BackColor = Color.White
+        sirene = maßnahme_feuersirene.Checked
+        probe_sirene = maßnahme_probesirene.Checked
     End Sub
-
-    Private Sub Listen()
-        While client.Connected
-            Try
-
-            Catch
-                MessageBox.Show("Verbindung zum Server nicht möglich!")
-                Application.Exit()
-            End Try
-        End While
-    End Sub
-
 
     Private Sub initELDIS_timer_Tick(sender As Object, e As EventArgs) Handles initELDIS_timer.Tick
         initELDIS.Visible = False
         initELDIS_Label.Visible = False
-
     End Sub
 
     Private Sub EinsatzerfassungToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EinsatzerfassungToolStripMenuItem.Click
@@ -111,8 +60,7 @@ Public Class hauptmenu
         Dim result As Integer = MessageBox.Show("Willst du ELDIS wirklich beenden?", "ELDIS", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
         If result = DialogResult.Yes Then
             Application.Exit()
-            streamw.Flush()
-            client.Close()
+            eldisModule.DisconnectToELDIS()
             End
         Else
             If result = DialogResult.No Then
@@ -121,32 +69,10 @@ Public Class hauptmenu
         End If
     End Sub
 
-    Private Sub NeuerEinsatz()
-        conn.Open()
-        Dim QueryID As String
-        QueryID = "insert into sis_fw_einsatz (datum,status,disponent,islocked,idlocked) values ('" & AlarmUhrzeit & "','" & "OFFEN" & "','" & My.Settings.benutzername & "','" & "yes" & "','" & My.Settings.id & "')"
-        COMMAND = New MySqlCommand(QueryID, conn)
-        READER = COMMAND.ExecuteReader
-        READER.Close()
-        conn.Close()
-    End Sub
-    Private Sub LetzteEinsatznummer()
-        conn.Open()
-        Dim QueryID As String
-        QueryID = "SELECT MAX(einsatznummer) FROM sis_fw_einsatz"
-        Dim cmd_query As New MySqlCommand(QueryID, conn)
-        Dim cmd_result As Integer = CInt(cmd_query.ExecuteScalar())
-        einsatznummer_box.Text = cmd_result
-        COMMAND = New MySqlCommand(QueryID, conn)
-        READER = COMMAND.ExecuteReader
-        READER.Close()
-        conn.Close()
-    End Sub
 
     Private Sub controlbox_neweinsatz_Click(sender As Object, e As EventArgs) Handles controlbox_neweinsatz.Click
-        NeuerEinsatz()
-        LetzteEinsatznummer()
-
+        emergencyModule.CreateEmergency(AlarmUhrzeit, "OFFEN", My.Settings.benutzername, "yes", My.Settings.id)
+        einsatznummer_box.Text = My.Settings.currenteinsatzid
         sonstiges_intern.Text = AlarmUhrzeit
         status_box.Text = "OFFEN"
         maßnahme_pager.Enabled = True
@@ -168,26 +94,9 @@ Public Class hauptmenu
         sonstiges_extern.Enabled = True
         sonstiges_intern.Enabled = True
     End Sub
-    Private Sub OpenEinsatz()
-        conn.Open()
-        Dim Query As String
-        Query = "UPDATE sis_fw_einsatz SET idlocked = '" & My.Settings.id & "',islocked = '" & "yes" & "' WHERE einsatznummer = '" & My.Settings.currenteinsatzid & "'"
-        COMMAND = New MySqlCommand(Query, conn)
-        READER = COMMAND.ExecuteReader
-        READER.Close()
-        conn.Close()
-    End Sub
-
-
 
     Private Sub controlbox_ende_Click(sender As Object, e As EventArgs) Handles controlbox_ende.Click
-        conn.Open()
-        Dim Query As String
-        Query = "UPDATE sis_fw_einsatz SET status = '" & "ABGESCHLOSSEN" & "',idlocked = '" & "" & "',islocked = '" & "end" & "' WHERE einsatznummer = '" & einsatznummer_box.Text & "'"
-        COMMAND = New MySqlCommand(Query, conn)
-        READER = COMMAND.ExecuteReader
-        READER.Close()
-        conn.Close()
+        emergencyModule.EndEmergency(einsatznummer_box.Text)
         ' Textboxen-Clearen
         maßnahme_pager.Enabled = False
         maßnahme_proberuf.Enabled = False
@@ -225,30 +134,25 @@ Public Class hauptmenu
     End Sub
 
     Private Sub controlbox_speichern_Click(sender As Object, e As EventArgs) Handles controlbox_speichern.Click
-        AlarmUhrzeit = DateTime.Now.ToString("dd/MM/yyyy: " & DateTime.Now.ToString("HH:mm:ss"))
-        conn.Open()
-        Dim Query As String
+        emergencyModule.SaveEmergency(alarmundmelde_alarmstufebox.Text, alarmundmelde_meldebildbox.Text, AlarmUhrzeit, einsatzort_straße.Text, einsatzort_nr.Text, einsatzort_postleitzahl.Text, einsatzort_stadt.Text, sonstiges_intern.Text, sonstiges_extern.Text, einsatznummer_box.Text)
+        'AlarmUhrzeit = DateTime.Now.ToString("dd/MM/yyyy: " & DateTime.Now.ToString("HH:mm:ss"))
+        'conn.Open()
+        'Dim Query As String
 
-        Query = "UPDATE sis_fw_einsatz SET alarmstufe = '" & alarmundmelde_alarmstufebox.Text & "', meldebild= '" & alarmundmelde_meldebildbox.Text & "', datum = '" & AlarmUhrzeit & "', straße = '" & einsatzort_straße.Text & "', nr = '" & einsatzort_nr.Text & "', plz = '" & einsatzort_postleitzahl.Text & "', stadt = '" & einsatzort_stadt.Text & "', einsatzort = '" & einsatzort_straße.Text + " " + einsatzort_nr.Text + ", " + einsatzort_postleitzahl.Text + " " + einsatzort_stadt.Text & "', interne_notizen = '" & sonstiges_intern.Text & "', externe_notizen = '" & sonstiges_extern.Text & "' WHERE einsatznummer = '" & einsatznummer_box.Text & "'"
-        COMMAND = New MySqlCommand(Query, conn)
+        ''Query = "UPDATE sis_fw_einsatz SET alarmstufe = '" & alarmundmelde_alarmstufebox.Text & "', meldebild= '" & alarmundmelde_meldebildbox.Text & "', datum = '" & AlarmUhrzeit & "', straße = '" & einsatzort_straße.Text & "', nr = '" & einsatzort_nr.Text & "', plz = '" & einsatzort_postleitzahl.Text & "', stadt = '" & einsatzort_stadt.Text & "', einsatzort = '" & einsatzort_straße.Text + " " + einsatzort_nr.Text + ", " + einsatzort_postleitzahl.Text + " " + einsatzort_stadt.Text & "', interne_notizen = '" & sonstiges_intern.Text & "', externe_notizen = '" & sonstiges_extern.Text & "' WHERE einsatznummer = '" & einsatznummer_box.Text & "'"
 
-        READER = COMMAND.ExecuteReader
-        READER.Close()
-        conn.Close()
+        'COMMAND = New MySqlCommand(Query, conn)
+
+        'READER = COMMAND.ExecuteReader
+        'READER.Close()
+        'conn.Close()
     End Sub
 
     Private Sub PagerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PagerToolStripMenuItem.Click
         pager.Show()
     End Sub
     Public Sub maßnahme_ausführen_Click(sender As Object, e As EventArgs) Handles maßnahme_ausführen.Click
-        emergencyModule.NewEmergency()
-
-        Dim sirene As Boolean
-        Dim probe_sirene As Boolean
-        sirene = maßnahme_feuersirene.Checked
-        probe_sirene = maßnahme_probesirene.Checked
-        Dim prefix As String
-
+        emergencyModule.DispoEmergency()
         If sirene = True Then
             prefix = "#sirene"
             maßnahmen_view.Rows.Add("LS-Dummy Generalalarm FW-" & configModule.FeuerwehrName & " Sirene", True)
@@ -263,10 +167,10 @@ Public Class hauptmenu
                 End If
             End If
         End If
-        streamw.WriteLine(prefix + " ELS: " & alarmundmelde_meldebildbox.Text & " (" & alarmundmelde_alarmstufebox.Text & ") " & " für die Feuerwehr " & configModule.FeuerwehrName & ", " & einsatzort_postleitzahl.Text & " " & einsatzort_stadt.Text & ", " & einsatzort_straße.Text & " " & einsatzort_nr.Text & ", " & "Info: " & sonstiges_extern.Text & " um: " & DateTime.Now.ToString("HH:mm:ss"))
+        eldisModule.StreamToServer(prefix + " ELS:  " & alarmundmelde_meldebildbox.Text & " (" & alarmundmelde_alarmstufebox.Text & ") " & " für die Feuerwehr " & configModule.FeuerwehrName & ", " & einsatzort_postleitzahl.Text & " " & einsatzort_stadt.Text & ", " & einsatzort_straße.Text & " " & einsatzort_nr.Text & ", " & "Info: " & sonstiges_extern.Text & " um: " & DateTime.Now.ToString("HH:mm : ss"))
+        'streamw.WriteLine(prefix + " ELS: " & alarmundmelde_meldebildbox.Text & " (" & alarmundmelde_alarmstufebox.Text & ") " & " für die Feuerwehr " & configModule.FeuerwehrName & ", " & einsatzort_postleitzahl.Text & " " & einsatzort_stadt.Text & ", " & einsatzort_straße.Text & " " & einsatzort_nr.Text & ", " & "Info: " & sonstiges_extern.Text & " um: " & DateTime.Now.ToString("HH:mm:ss"))
         maßnahme_ausführen.BackColor = Color.Green
-        streamw.Flush()
-        conn.Close()
+        eldisModule.FlushToServer()
 
 
 
@@ -317,10 +221,6 @@ Public Class hauptmenu
 
     End Sub
 
-    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
-
-    End Sub
-
     Private Sub MeinProfilToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MeinProfilToolStripMenuItem.Click
         meinprofil.Show()
     End Sub
@@ -329,35 +229,10 @@ Public Class hauptmenu
         record_sprachaufnahme.Show()
     End Sub
 
-
-    Private Sub GetEinsatze()
-        Dim conn As MySqlConnection
-        Dim cmd As New MySqlCommand
-        conn = New MySqlConnection()
-        conn.ConnectionString = ("server=" & configModule.mysqlserver & " ;userid=" & configModule.mysqluser & ";password=" & configModule.mysqlpasswort & ";database=" & configModule.mysqldatabase & "")
-        Try
-            conn.Open() ' Verbindung öffnen
-        Catch myerror As MySqlException
-            MsgBox("Keine Verbindung zur Datenbank : " & myerror.Message.ToString) ' Falls Fehler : Fehler anzeigen
-        End Try
-        Dim table As New DataTable
-        cmd.Connection = conn
-        cmd.CommandText = "SELECT einsatznummer as 'Einsatznummer',datum as 'Datum',alarmstufe as 'Alarmstufe',meldebild as 'Meldebild', einsatzort as 'Einsatzadresse' FROM sis_fw_einsatz"
-
-        Dim adapter As New MySqlDataAdapter
-        adapter.SelectCommand = cmd
-        adapter.Fill(table)
-        einsatzliste.DataSource = table
-    End Sub
-
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         eldis_tabcontrol.SelectedTab = eldis_einsatzerfassung
-
-
-        NeuerEinsatz()
-        LetzteEinsatznummer()
-
+        emergencyModule.CreateEmergency(AlarmUhrzeit, "OFFEN", My.Settings.benutzername, "yes", My.Settings.id)
+        einsatznummer_box.Text = My.Settings.currenteinsatzid
         sonstiges_intern.Text = AlarmUhrzeit
         status_box.Text = "OFFEN"
         maßnahme_pager.Enabled = True
@@ -453,7 +328,7 @@ Public Class hauptmenu
                 einsatzort_objekt.Enabled = True
                 sonstiges_extern.Enabled = True
                 sonstiges_intern.Enabled = True
-                OpenEinsatz()
+                emergencyModule.OpenEmergency(My.Settings.currenteinsatzid)
             ElseIf myReader.GetString(18) = "end" Then
                 MessageBox.Show("Dieser Einsatz wurde bereits beendet!", "ELDIS", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
@@ -464,24 +339,12 @@ Public Class hauptmenu
         myConn.Close()
     End Sub
 
-    Private Sub FunkgerätToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FunkgerätToolStripMenuItem.Click
-        Dim strPath As String = System.IO.Path.GetDirectoryName(
-    System.Reflection.Assembly.GetExecutingAssembly().CodeBase)
-        Process.Start(strPath & "/Funkgerät.exe")
-    End Sub
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         GetEinsatze()
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        conn.Open()
-        Dim Query As String
-        Query = "UPDATE sis_fw_einsatz SET status = '" & "OFFEN" & "',idlocked = '" & "" & "',islocked = '" & "no" & "' WHERE einsatznummer = '" & einsatznummer_box.Text & "'"
-        COMMAND = New MySqlCommand(Query, conn)
-        READER = COMMAND.ExecuteReader
-        READER.Close()
-        conn.Close()
+        emergencyModule.PutAwayEmergency(einsatznummer_box.Text)
         ' Textboxen-Clearen
         maßnahme_pager.Enabled = False
         maßnahme_proberuf.Enabled = False
@@ -531,6 +394,10 @@ Public Class hauptmenu
     End Sub
 
     Private Sub DisponentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DisponentToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub eldis_einsatzerfassung_Click(sender As Object, e As EventArgs) Handles eldis_einsatzerfassung.Click
 
     End Sub
 End Class
