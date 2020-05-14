@@ -50,6 +50,6 @@ fakertv - graphics and pictures
 
 sturmi - technican support
 
-amenofisch - helper
+amenofisch - helper and documentation creator
 
 and every beta-tester for testing. thank you! <3
