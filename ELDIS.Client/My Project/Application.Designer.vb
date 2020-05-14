@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.ELP___GrandTheftAustria.login
+            Me.MainForm = Global.ELDIS.Client.login
         End Sub
     End Class
 End Namespace

@@ -32,7 +32,7 @@ Partial Class pager
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.ELP___GrandTheftAustria.My.Resources.Resources._32_0
+        Me.PictureBox1.Image = ELDIS.Client.My.Resources.Resources._32_0
         Me.PictureBox1.Location = New System.Drawing.Point(-10, 2)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.PictureBox1.Name = "PictureBox1"

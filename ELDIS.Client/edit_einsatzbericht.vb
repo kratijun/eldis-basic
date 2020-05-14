@@ -11,7 +11,7 @@ Public Class edit_einsatzbericht
         stringCmd = "Select * FROM sis_fw_einsatz where einsatznummer= '" & My.Settings.currenteinsatzid & "'"
 
         'Frame your connection string here.
-        stringConn = (“server=" & My.Settings.mysqlserver & " ;userid=" & My.Settings.mysqluser & ";password=" & My.Settings.mysqlpassword & ";database=" & My.Settings.mysqldatabase & "")
+        stringConn = ("server=" & configModule.mysqlserver & " ;userid=" & configModule.mysqluser & ";password=" & configModule.mysqlpasswort & ";database=" & configModule.mysqldatabase & "")
 
         'Get your connection here.
         myConn = New MySqlConnection(stringConn)
@@ -61,7 +61,7 @@ Public Class edit_einsatzbericht
             MessageBox.Show("Fülle den Einsatzbericht richtig aus ;)!", "ELDIS", MessageBoxButtons.OK)
         Else
             MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = (“server=" & My.Settings.mysqlserver & " ;userid=" & My.Settings.mysqluser & ";password=" & My.Settings.mysqlpassword & ";database=" & My.Settings.mysqldatabase & "")
+            MysqlConn.ConnectionString = ("server=" & configModule.mysqlserver & " ;userid=" & configModule.mysqluser & ";password=" & configModule.mysqlpasswort & ";database=" & configModule.mysqldatabase & "")
 
             Dim READER As MySqlDataReader
 

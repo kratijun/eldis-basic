@@ -15,7 +15,7 @@ Public Class meinprofil
         stringCmd = "Select * FROM sis_users where id= '" & My.Settings.id & "'"
 
         'Frame your connection string here.
-        stringConn = (“server=" & My.Settings.mysqlserver & " ;userid=" & My.Settings.mysqluser & ";password=" & My.Settings.mysqlpassword & ";database=" & My.Settings.mysqldatabase & "")
+        stringConn = ("server=" & configModule.mysqlserver & " ;userid=" & configModule.mysqluser & ";password=" & configModule.mysqlpasswort & ";database=" & configModule.mysqldatabase & "")
 
         'Get your connection here.
         myConn = New MySqlConnection(stringConn)

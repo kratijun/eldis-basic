@@ -54,11 +54,9 @@ Partial Class neuen_sis
         Me.sis_group.Controls.Add(Me.Label1)
         Me.sis_group.Controls.Add(Me.sis_user)
         Me.sis_group.Controls.Add(Me.Label2)
-        Me.sis_group.Location = New System.Drawing.Point(18, 18)
-        Me.sis_group.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.sis_group.Location = New System.Drawing.Point(12, 12)
         Me.sis_group.Name = "sis_group"
-        Me.sis_group.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.sis_group.Size = New System.Drawing.Size(1164, 342)
+        Me.sis_group.Size = New System.Drawing.Size(776, 222)
         Me.sis_group.TabIndex = 0
         Me.sis_group.TabStop = False
         '
@@ -67,10 +65,9 @@ Partial Class neuen_sis
         Me.controlbox_neweinsatz.BackColor = System.Drawing.Color.Teal
         Me.controlbox_neweinsatz.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.controlbox_neweinsatz.ForeColor = System.Drawing.Color.White
-        Me.controlbox_neweinsatz.Location = New System.Drawing.Point(16, 283)
-        Me.controlbox_neweinsatz.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.controlbox_neweinsatz.Location = New System.Drawing.Point(11, 184)
         Me.controlbox_neweinsatz.Name = "controlbox_neweinsatz"
-        Me.controlbox_neweinsatz.Size = New System.Drawing.Size(225, 49)
+        Me.controlbox_neweinsatz.Size = New System.Drawing.Size(150, 32)
         Me.controlbox_neweinsatz.TabIndex = 19
         Me.controlbox_neweinsatz.Text = "Benutzer erzeugen"
         Me.controlbox_neweinsatz.UseVisualStyleBackColor = False
@@ -79,10 +76,9 @@ Partial Class neuen_sis
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label6.Location = New System.Drawing.Point(528, 160)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(352, 104)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(180, 25)
+        Me.Label6.Size = New System.Drawing.Size(130, 17)
         Me.Label6.TabIndex = 18
         Me.Label6.Text = "Dispo (Nur Polizei):"
         '
@@ -95,20 +91,18 @@ Partial Class neuen_sis
         Me.sis_dispo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.sis_dispo.FormattingEnabled = True
         Me.sis_dispo.Items.AddRange(New Object() {"yes", "false"})
-        Me.sis_dispo.Location = New System.Drawing.Point(532, 191)
-        Me.sis_dispo.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.sis_dispo.Location = New System.Drawing.Point(355, 124)
         Me.sis_dispo.Name = "sis_dispo"
-        Me.sis_dispo.Size = New System.Drawing.Size(620, 28)
+        Me.sis_dispo.Size = New System.Drawing.Size(415, 21)
         Me.sis_dispo.TabIndex = 17
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label5.Location = New System.Drawing.Point(528, 92)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(352, 60)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(88, 25)
+        Me.Label5.Size = New System.Drawing.Size(63, 17)
         Me.Label5.TabIndex = 16
         Me.Label5.Text = "Fraktion:"
         '
@@ -121,20 +115,18 @@ Partial Class neuen_sis
         Me.sis_fraki.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.sis_fraki.FormattingEnabled = True
         Me.sis_fraki.Items.AddRange(New Object() {"fire", "ambulance", "police"})
-        Me.sis_fraki.Location = New System.Drawing.Point(532, 123)
-        Me.sis_fraki.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.sis_fraki.Location = New System.Drawing.Point(355, 80)
         Me.sis_fraki.Name = "sis_fraki"
-        Me.sis_fraki.Size = New System.Drawing.Size(620, 28)
+        Me.sis_fraki.Size = New System.Drawing.Size(415, 21)
         Me.sis_fraki.TabIndex = 15
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label4.Location = New System.Drawing.Point(525, 25)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(350, 16)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(157, 25)
+        Me.Label4.Size = New System.Drawing.Size(114, 17)
         Me.Label4.TabIndex = 14
         Me.Label4.Text = "Benutzergruppe:"
         '
@@ -147,30 +139,27 @@ Partial Class neuen_sis
         Me.sis_usergroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.sis_usergroup.FormattingEnabled = True
         Me.sis_usergroup.Items.AddRange(New Object() {"user", "disponent", "admin"})
-        Me.sis_usergroup.Location = New System.Drawing.Point(530, 55)
-        Me.sis_usergroup.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.sis_usergroup.Location = New System.Drawing.Point(353, 36)
         Me.sis_usergroup.Name = "sis_usergroup"
-        Me.sis_usergroup.Size = New System.Drawing.Size(620, 28)
+        Me.sis_usergroup.Size = New System.Drawing.Size(415, 21)
         Me.sis_usergroup.TabIndex = 13
         '
         'sis_steamid
         '
         Me.sis_steamid.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.sis_steamid.Location = New System.Drawing.Point(20, 188)
-        Me.sis_steamid.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.sis_steamid.Location = New System.Drawing.Point(13, 122)
         Me.sis_steamid.Name = "sis_steamid"
-        Me.sis_steamid.Size = New System.Drawing.Size(498, 26)
+        Me.sis_steamid.Size = New System.Drawing.Size(333, 20)
         Me.sis_steamid.TabIndex = 11
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label3.Location = New System.Drawing.Point(15, 157)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(10, 102)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(94, 25)
+        Me.Label3.Size = New System.Drawing.Size(65, 17)
         Me.Label3.TabIndex = 12
         Me.Label3.Text = "SteamID:"
         '
@@ -178,11 +167,10 @@ Partial Class neuen_sis
         '
         Me.sis_pass.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.sis_pass.Location = New System.Drawing.Point(20, 122)
-        Me.sis_pass.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.sis_pass.Location = New System.Drawing.Point(13, 79)
         Me.sis_pass.Name = "sis_pass"
         Me.sis_pass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.sis_pass.Size = New System.Drawing.Size(498, 26)
+        Me.sis_pass.Size = New System.Drawing.Size(333, 20)
         Me.sis_pass.TabIndex = 9
         Me.sis_pass.UseSystemPasswordChar = True
         '
@@ -190,10 +178,9 @@ Partial Class neuen_sis
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label1.Location = New System.Drawing.Point(12, 91)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(8, 59)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(98, 25)
+        Me.Label1.Size = New System.Drawing.Size(69, 17)
         Me.Label1.TabIndex = 10
         Me.Label1.Text = "Passwort:"
         '
@@ -201,31 +188,28 @@ Partial Class neuen_sis
         '
         Me.sis_user.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.sis_user.Location = New System.Drawing.Point(16, 55)
-        Me.sis_user.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.sis_user.Location = New System.Drawing.Point(11, 36)
         Me.sis_user.Name = "sis_user"
-        Me.sis_user.Size = New System.Drawing.Size(498, 26)
+        Me.sis_user.Size = New System.Drawing.Size(333, 20)
         Me.sis_user.TabIndex = 7
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label2.Location = New System.Drawing.Point(9, 25)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(6, 16)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(145, 25)
+        Me.Label2.Size = New System.Drawing.Size(104, 17)
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "Benutzername:"
         '
         'neuen_sis
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1200, 378)
+        Me.ClientSize = New System.Drawing.Size(800, 246)
         Me.Controls.Add(Me.sis_group)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "neuen_sis"
         Me.Text = "Neuen ELDIS Benutzer"
         Me.sis_group.ResumeLayout(False)

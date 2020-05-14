@@ -47,7 +47,7 @@ Public Class pager
 
     Private Sub pager_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            client.Connect("DEINE IP", 8000) ' hier die ip des servers eintragen. 
+            client.Connect(configModule.ELDISServerIP, configModule.ELDISServerPort) ' hier die ip des servers eintragen. 
             ' da dieser beim testen wohl lokal läuft, hier die loopback-ip 127.0.0.1.
             If client.Connected Then
                 stream = client.GetStream
@@ -80,7 +80,6 @@ Public Class pager
         My.Computer.Audio.Play(My.Resources.sirene_probe,
         AudioPlayMode.Background)
     End Sub
-
 
     Private Sub Listen()
         While client.Connected

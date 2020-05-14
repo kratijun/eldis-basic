@@ -2,7 +2,7 @@
 Imports System.IO
 Imports System.ComponentModel
 Imports MySql.Data.MySqlClient
-Imports system.text
+Imports System.Text
 
 Public Class hauptmenu
     Private stream As NetworkStream
@@ -39,14 +39,8 @@ Public Class hauptmenu
 
 
     Private Sub hauptmenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        AlarmUhrzeit = DateTime.Now.ToString("dd/MM/yyyy: " & DateTime.Now.ToString("HH:mm:ss"))
-        Me.Text = "ELDIS @" & My.Settings.benutzername & " [" & Me.GetType.Assembly.GetName.Version.ToString & "]"
-        conn = New MySqlConnection()
-        conn.ConnectionString = (“server=" & My.Settings.mysqlserver & " ;userid=" & My.Settings.mysqluser & ";password=" & My.Settings.mysqlpassword & ";database=" & My.Settings.mysqldatabase & "")
-        GetEinsatze()
-        Dim Uhrzeit = DateTime.Now.ToString("HH:mm:ss") & " Uhr | "
         Try
-            client.Connect("DEINE IP", 8000) ' hier die ip des servers eintragen. 
+            client.Connect(configModule.ELDISServerIP, configModule.ELDISServerPort) ' hier die ip des servers eintragen. 
             ' da dieser beim testen wohl lokal läuft, hier die loopback-ip 127.0.0.1.
             If client.Connected Then
                 stream = client.GetStream
@@ -64,6 +58,13 @@ Public Class hauptmenu
             Application.Exit()
         End Try
 
+
+        AlarmUhrzeit = DateTime.Now.ToString("dd/MM/yyyy: " & DateTime.Now.ToString("HH:mm:ss"))
+        Me.Text = "ELDIS @" & My.Settings.benutzername & " [" & Me.GetType.Assembly.GetName.Version.ToString & "]"
+        conn = New MySqlConnection()
+        conn.ConnectionString = ("server=" & configModule.mysqlserver & " ;userid=" & configModule.mysqluser & ";password=" & configModule.mysqlpasswort & ";database=" & configModule.mysqldatabase & "")
+        GetEinsatze()
+        Dim Uhrzeit = DateTime.Now.ToString("HH:mm:ss") & " Uhr | "
 
         If My.Settings.usertype = "user" Then
             eldis_tabcontrol.TabPages.Remove(eldis_einsatzerfassung)
@@ -182,8 +183,11 @@ Public Class hauptmenu
     Private Sub controlbox_ende_Click(sender As Object, e As EventArgs) Handles controlbox_ende.Click
         conn.Open()
         Dim Query As String
-        Query = "UPDATE sis_fw_einsatz SET status = '" & "ABGESCHLOSSEN" & "',idlocked = '" & "" & "',islocked = '" & "end" & "' WHERE einsatznummer = '" & My.Settings.currenteinsatzid & "'"
+        Query = "UPDATE sis_fw_einsatz SET status = '" & "ABGESCHLOSSEN" & "',idlocked = '" & "" & "',islocked = '" & "end" & "' WHERE einsatznummer = '" & einsatznummer_box.Text & "'"
         COMMAND = New MySqlCommand(Query, conn)
+        READER = COMMAND.ExecuteReader
+        READER.Close()
+        conn.Close()
         ' Textboxen-Clearen
         maßnahme_pager.Enabled = False
         maßnahme_proberuf.Enabled = False
@@ -218,9 +222,6 @@ Public Class hauptmenu
         maßnahmen_view.Rows.Clear()
         My.Settings.currenteinsatzid = ""
         '
-        READER = COMMAND.ExecuteReader
-        READER.Close()
-        conn.Close()
     End Sub
 
     Private Sub controlbox_speichern_Click(sender As Object, e As EventArgs) Handles controlbox_speichern.Click
@@ -239,20 +240,9 @@ Public Class hauptmenu
     Private Sub PagerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PagerToolStripMenuItem.Click
         pager.Show()
     End Sub
-    Private Sub maßnahme_ausführen_Click(sender As Object, e As EventArgs) Handles maßnahme_ausführen.Click
-        maßnahme_ausführen.BackColor = Color.Green
-        'If alarmstufeCombo.Text = "" And adressetext.Text = "" & nrtext.Text = "" & plztext.Text = "" & stadttext.Text = "" Then
-        'MessageBox.Show("Fülle die Einsatzmaske richtig aus!", "ELDIS", MessageBoxButtons.OK)
-        'Else
-        Dim Query As String
-        AlarmUhrzeit = DateTime.Now.ToString("dd/MM/yyyy: " & DateTime.Now.ToString("HH:mm:ss"))
-        Query = "UPDATE sis_fw_einsatz SET alarmstufe = '" & alarmundmelde_alarmstufebox.Text & "',meldebild= '" & alarmundmelde_meldebildbox.Text & "', datum = '" & Uhrzeit + dayName & "', straße = '" & einsatzort_straße.Text & "', nr = '" & einsatzort_nr.Text & "', plz = '" & einsatzort_postleitzahl.Text & "', stadt = '" & einsatzort_stadt.Text & "', interne_notizen = '" & sonstiges_intern.Text & "', externe_notizen = '" & sonstiges_extern.Text & "' WHERE einsatznummer = '" & einsatznummer_box.Text & "'"
-        'Query = "insert into einsatz (einsatzart,datum,einsatzort,status,disponent) values ('" & meldebildCombo.Text & "','" & AlarmUhrzeit & "','" & adressetext.Text & " " & nrtext.Text & ", " & plztext.Text & " " & stadttext.Text & "','" & "OFFEN" & "','" & My.Settings.username & "')"
-        status_box.Text = "OFFEN"
-        COMMAND = New MySqlCommand(Query, conn)
-        conn.Open()
-        READER = COMMAND.ExecuteReader
-        READER.Close()
+    Public Sub maßnahme_ausführen_Click(sender As Object, e As EventArgs) Handles maßnahme_ausführen.Click
+        emergencyModule.NewEmergency()
+
         Dim sirene As Boolean
         Dim probe_sirene As Boolean
         sirene = maßnahme_feuersirene.Checked
@@ -261,22 +251,61 @@ Public Class hauptmenu
 
         If sirene = True Then
             prefix = "#sirene"
-            maßnahmen_view.Rows.Add("LS-Dummy Generalalarm FW-Los Santos Sirene", True)
+            maßnahmen_view.Rows.Add("LS-Dummy Generalalarm FW-" & configModule.FeuerwehrName & " Sirene", True)
         ElseIf sirene = False Then
             If maßnahme_pager.Checked = True Then
                 prefix = "#pager"
-                maßnahmen_view.Rows.Add("LS-Dummy Generalalarm FW-Los Santos", True)
+                maßnahmen_view.Rows.Add("LS-Dummy Generalalarm FW-" & configModule.FeuerwehrName & True)
             Else
                 If probe_sirene = True Then
                     prefix = "#probesirene"
-                    maßnahmen_view.Rows.Add("LS-Dummy Sirenenproberuf Los Santos", True)
+                    maßnahmen_view.Rows.Add("LS-Dummy Sirenenproberuf" & configModule.FeuerwehrName & True)
                 End If
             End If
         End If
-        streamw.WriteLine(prefix + " ELS: " & alarmundmelde_meldebildbox.Text & " (" & alarmundmelde_alarmstufebox.Text & ") " & " für die Feuerwehr Los Santos, " & einsatzort_postleitzahl.Text & " " & einsatzort_stadt.Text & ", " & einsatzort_straße.Text & " " & einsatzort_nr.Text & ", " & "Info: " & sonstiges_extern.Text & " um: " & DateTime.Now.ToString("HH:mm:ss"))
+        streamw.WriteLine(prefix + " ELS: " & alarmundmelde_meldebildbox.Text & " (" & alarmundmelde_alarmstufebox.Text & ") " & " für die Feuerwehr " & configModule.FeuerwehrName & ", " & einsatzort_postleitzahl.Text & " " & einsatzort_stadt.Text & ", " & einsatzort_straße.Text & " " & einsatzort_nr.Text & ", " & "Info: " & sonstiges_extern.Text & " um: " & DateTime.Now.ToString("HH:mm:ss"))
         maßnahme_ausführen.BackColor = Color.Green
         streamw.Flush()
         conn.Close()
+
+
+
+        'maßnahme_ausführen.backcolor = color.green
+        ''if alarmstufecombo.text = "" and adressetext.text = "" & nrtext.text = "" & plztext.text = "" & stadttext.text = "" then
+        ''messagebox.show("fülle die einsatzmaske richtig aus!", "eldis", messageboxbuttons.ok)
+        ''else
+        'dim query as string
+        'alarmuhrzeit = datetime.now.tostring("dd/mm/yyyy: " & datetime.now.tostring("hh:mm:ss"))
+        'query = "update sis_fw_einsatz set alarmstufe = '" & alarmundmelde_alarmstufebox.text & "',meldebild= '" & alarmundmelde_meldebildbox.text & "', datum = '" & uhrzeit + dayname & "', straße = '" & einsatzort_straße.text & "', nr = '" & einsatzort_nr.text & "', plz = '" & einsatzort_postleitzahl.text & "', stadt = '" & einsatzort_stadt.text & "', interne_notizen = '" & sonstiges_intern.text & "', externe_notizen = '" & sonstiges_extern.text & "' where einsatznummer = '" & einsatznummer_box.text & "'"
+        'status_box.text = "offen"
+        'command = new mysqlcommand(query, conn)
+        'conn.open()
+        'reader = command.executereader
+        'reader.close()
+        'dim sirene as boolean
+        'dim probe_sirene as boolean
+        'sirene = maßnahme_feuersirene.checked
+        'probe_sirene = maßnahme_probesirene.checked
+        'dim prefix as string
+
+        'if sirene = true then
+        '    prefix = "#sirene"
+        '    maßnahmen_view.rows.add("ls-dummy generalalarm fw-" & configmodule.feuerwehrname & " sirene", true)
+        'elseif sirene = false then
+        '    if maßnahme_pager.checked = true then
+        '        prefix = "#pager"
+        '        maßnahmen_view.rows.add("ls-dummy generalalarm fw-" & configmodule.feuerwehrname & true)
+        '    else
+        '        if probe_sirene = true then
+        '            prefix = "#probesirene"
+        '            maßnahmen_view.rows.add("ls-dummy sirenenproberuf" & configmodule.feuerwehrname & true)
+        '        end if
+        '    end if
+        'end if
+        'streamw.writeline(prefix + " els: " & alarmundmelde_meldebildbox.text & " (" & alarmundmelde_alarmstufebox.text & ") " & " für die feuerwehr " & configmodule.feuerwehrname & ", " & einsatzort_postleitzahl.text & " " & einsatzort_stadt.text & ", " & einsatzort_straße.text & " " & einsatzort_nr.text & ", " & "info: " & sonstiges_extern.text & " um: " & datetime.now.tostring("hh:mm:ss"))
+        'maßnahme_ausführen.backcolor = color.green
+        'streamw.flush()
+        'conn.close()
     End Sub
 
     Private Sub maßnahme_mehr_Click(sender As Object, e As EventArgs) Handles maßnahme_mehr.Click
@@ -305,7 +334,7 @@ Public Class hauptmenu
         Dim conn As MySqlConnection
         Dim cmd As New MySqlCommand
         conn = New MySqlConnection()
-        conn.ConnectionString = (“server=" & My.Settings.mysqlserver & " ;userid=" & My.Settings.mysqluser & ";password=" & My.Settings.mysqlpassword & ";database=" & My.Settings.mysqldatabase & "")
+        conn.ConnectionString = ("server=" & configModule.mysqlserver & " ;userid=" & configModule.mysqluser & ";password=" & configModule.mysqlpasswort & ";database=" & configModule.mysqldatabase & "")
         Try
             conn.Open() ' Verbindung öffnen
         Catch myerror As MySqlException
@@ -363,7 +392,7 @@ Public Class hauptmenu
             stringCmd = "Select * FROM sis_fw_einsatz where einsatznummer= '" & cell.Value.ToString & "'"
         Next
         'Frame your connection string here.
-        stringConn = (“server=" & My.Settings.mysqlserver & " ;userid=" & My.Settings.mysqluser & ";password=" & My.Settings.mysqlpassword & ";database=" & My.Settings.mysqldatabase & "")
+        stringConn = ("server=" & configModule.mysqlserver & " ;userid=" & configModule.mysqluser & ";password=" & configModule.mysqlpasswort & ";database=" & configModule.mysqldatabase & "")
 
         'Get your connection here.
         myConn = New MySqlConnection(stringConn)
@@ -448,8 +477,11 @@ Public Class hauptmenu
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         conn.Open()
         Dim Query As String
-        Query = "UPDATE sis_fw_einsatz SET status = '" & "OFFEN" & "',idlocked = '" & "" & "',islocked = '" & "no" & "' WHERE einsatznummer = '" & My.Settings.currenteinsatzid & "'"
+        Query = "UPDATE sis_fw_einsatz SET status = '" & "OFFEN" & "',idlocked = '" & "" & "',islocked = '" & "no" & "' WHERE einsatznummer = '" & einsatznummer_box.Text & "'"
         COMMAND = New MySqlCommand(Query, conn)
+        READER = COMMAND.ExecuteReader
+        READER.Close()
+        conn.Close()
         ' Textboxen-Clearen
         maßnahme_pager.Enabled = False
         maßnahme_proberuf.Enabled = False
@@ -484,9 +516,6 @@ Public Class hauptmenu
         maßnahmen_view.Rows.Clear()
         My.Settings.currenteinsatzid = ""
         '
-        READER = COMMAND.ExecuteReader
-        READER.Close()
-        conn.Close()
     End Sub
 
     Private Sub controlbox_openeinsatz_Click(sender As Object, e As EventArgs) Handles controlbox_openeinsatz.Click
