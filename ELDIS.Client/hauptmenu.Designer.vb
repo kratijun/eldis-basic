@@ -132,15 +132,15 @@ Partial Class hauptmenu
         '
         Me.PagerToolStripMenuItem.Image = Global.ELDIS.Client.My.Resources.Resources._32_0
         Me.PagerToolStripMenuItem.Name = "PagerToolStripMenuItem"
-        Me.PagerToolStripMenuItem.Size = New System.Drawing.Size(193, 34)
+        Me.PagerToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.PagerToolStripMenuItem.Text = "Pager"
         '
         'FunkgerätToolStripMenuItem
         '
-        Me.FunkgerätToolStripMenuItem.Image = Global.ELDIS.Client.My.Resources.Resources.motorola_mtp850_3l_tetra_pt911b
+        Me.FunkgerätToolStripMenuItem.Image = Global.ELDIS.Client.My.Resources.Resources.folder_page
         Me.FunkgerätToolStripMenuItem.Name = "FunkgerätToolStripMenuItem"
-        Me.FunkgerätToolStripMenuItem.Size = New System.Drawing.Size(193, 34)
-        Me.FunkgerätToolStripMenuItem.Text = "Funkgerät"
+        Me.FunkgerätToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.FunkgerätToolStripMenuItem.Text = "Plugins"
         '
         'DisponentToolStripMenuItem
         '

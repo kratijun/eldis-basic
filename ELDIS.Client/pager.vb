@@ -57,11 +57,11 @@ Public Class pager
                 streamw.Flush()
                 t.Start()
             Else
-                MessageBox.Show("Verbindung zum Server nicht möglich!")
+                MessageBox.Show("Die Verbindung zum ELDIS-Server konnte nicht hergestellt werden. Beenden Sie ELDIS und versuchen sie es erneut.")
                 Application.Exit()
             End If
         Catch ex As Exception
-            MessageBox.Show("Verbindung zum Server nicht möglich!")
+            MessageBox.Show("Die Verbindung zum ELDIS-Server konnte nicht hergestellt werden. Beenden Sie ELDIS und versuchen sie es erneut.")
             Application.Exit()
         End Try
     End Sub

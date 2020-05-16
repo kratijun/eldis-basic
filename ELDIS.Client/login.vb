@@ -6,6 +6,7 @@ Imports System.Net.Sockets
 Imports System.IO
 Imports System.ComponentModel
 Imports ComputerInfo
+Imports Newtonsoft.Json.Linq
 
 Public Class login
     Dim conn As MySqlConnection
@@ -75,9 +76,11 @@ Public Class login
     End Sub
 
     Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         ' Dies ist die Konfiguration von ELDIS!!!
         configModule.InitMySQL("deinServer", " deinBenutzer", "deinPasswort", "deineDatenbank")
         configModule.InitELDISServer("deineIP", 8000)
+        configModule.FeuerwehrName = "deineFeuerwehr"
         ' ENFERNE DIESE NIEMALS! SONST FUNKTIONIERT DEIN PROGRAMM NICHT!!!
         version.Text = "Version " & Me.GetType.Assembly.GetName.Version.ToString
     End Sub

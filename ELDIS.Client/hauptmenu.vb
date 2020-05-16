@@ -405,4 +405,8 @@ Public Class hauptmenu
     Private Sub einsatzübersicht_box_Enter(sender As Object, e As EventArgs) Handles einsatzübersicht_box.Enter
 
     End Sub
+
+    Private Sub FunkgerätToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FunkgerätToolStripMenuItem.Click
+        plugins.Show()
+    End Sub
 End Class

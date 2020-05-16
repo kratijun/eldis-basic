@@ -3,6 +3,7 @@ Imports System.IO
 Imports System.ComponentModel
 Imports MySql.Data.MySqlClient
 Imports System.Text
+Imports Newtonsoft.Json.Linq
 Module eldisModule
     Public stream As NetworkStream
     Public streamw As StreamWriter
@@ -63,11 +64,11 @@ Module eldisModule
                 streamw.Flush()
                 t.Start()
             Else
-                MessageBox.Show("Verbindung zum Server nicht möglich!")
+                MessageBox.Show("Die Verbindung zum ELDIS-Server konnte nicht hergestellt werden. Beenden Sie ELDIS und versuchen sie es erneut.")
                 Application.Exit()
             End If
         Catch ex As Exception
-            MessageBox.Show("Verbindung zum Server nicht möglich!")
+            MessageBox.Show("Die Verbindung zum ELDIS-Server konnte nicht hergestellt werden. Beenden Sie ELDIS und versuchen sie es erneut.")
             Application.Exit()
         End Try
     End Function
@@ -80,7 +81,7 @@ Module eldisModule
         While client.Connected
             Try
             Catch
-                MessageBox.Show("Verbindung zum Server nicht möglich!")
+                MessageBox.Show("Die Verbindung zum ELDIS-Server wurde unterbrochen. Beenden Sie ELDIS und versuchen sie es erneut.")
                 Application.Exit()
             End Try
         End While
@@ -94,5 +95,19 @@ Module eldisModule
 
     Function FlushToServer()
         streamw.Flush()
+    End Function
+
+    Function InitAddons()
+        For Each plugin As String In IO.Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory & "Data/Addons")
+            plugins.CheckedListBox1.Items.Add(Path.GetFileName(plugin))
+        Next
+    End Function
+
+    Function selectAddon()
+        Dim JsonString As String = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory & "Data/Addons/" & plugins.CheckedListBox1.SelectedItem)
+        Dim o As JObject = JObject.Parse(JsonString)
+        plugins.modname.Text = o.SelectToken("ModName")
+        plugins.modversion.Text = o.SelectToken("ModVersion")
+        plugins.modauthor.Text = o.SelectToken("ModAuthor")
     End Function
 End Module
