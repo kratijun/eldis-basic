@@ -39,6 +39,7 @@ Einsatzberichte             : Aufzeichnung von Einsatzabläufen
 
 Benutzerverwaltung          : -
 
+!! DAS FMS IST NOCH NICHT FERTIG !!
 ------------------------------------------------------------------------------
 
 
