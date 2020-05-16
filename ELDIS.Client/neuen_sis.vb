@@ -7,7 +7,7 @@ Public Class neuen_sis
             MessageBox.Show("Fülle die Maske richtig aus!", "ELDIS", MessageBoxButtons.OK)
         Else
             MysqlConn = New MySqlConnection
-            MysqlConn.ConnectionString = (“server=" & My.Settings.mysqlserver & " ;userid=" & My.Settings.mysqluser & ";password=" & My.Settings.mysqlpassword & ";database=" & My.Settings.mysqldatabase & "")
+            MysqlConn.ConnectionString = ("server=" & configModule.mysqlserver & " ;userid=" & configModule.mysqluser & ";password=" & configModule.mysqlpasswort & ";database=" & configModule.mysqldatabase & "")
 
             Dim READER As MySqlDataReader
 
@@ -28,6 +28,10 @@ Public Class neuen_sis
 
             End Try
         End If
+
+    End Sub
+
+    Private Sub neuen_sis_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

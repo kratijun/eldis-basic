@@ -37,7 +37,7 @@ Partial Class record_sprachaufnahme
         'Button1
         '
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Image = Global.ELP___GrandTheftAustria.My.Resources.Resources.Update
+        Me.Button1.Image = Global.ELDIS.Client.My.Resources.Resources.Update
         Me.Button1.Location = New System.Drawing.Point(711, 198)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(37, 35)
@@ -47,7 +47,7 @@ Partial Class record_sprachaufnahme
         'play
         '
         Me.play.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.play.Image = Global.ELP___GrandTheftAustria.My.Resources.Resources.Dial
+        Me.play.Image = Global.ELDIS.Client.My.Resources.Resources.Dial
         Me.play.Location = New System.Drawing.Point(12, 198)
         Me.play.Name = "play"
         Me.play.Size = New System.Drawing.Size(37, 35)
@@ -57,7 +57,7 @@ Partial Class record_sprachaufnahme
         'delete
         '
         Me.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.delete.Image = Global.ELP___GrandTheftAustria.My.Resources.Resources._Erase
+        Me.delete.Image = Global.ELDIS.Client.My.Resources.Resources._Erase
         Me.delete.Location = New System.Drawing.Point(725, 95)
         Me.delete.Name = "delete"
         Me.delete.Size = New System.Drawing.Size(66, 35)
@@ -67,7 +67,7 @@ Partial Class record_sprachaufnahme
         'record
         '
         Me.record.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.record.Image = Global.ELP___GrandTheftAustria.My.Resources.Resources.Application1
+        Me.record.Image = Global.ELDIS.Client.My.Resources.Resources.Application1
         Me.record.Location = New System.Drawing.Point(12, 25)
         Me.record.Name = "record"
         Me.record.Size = New System.Drawing.Size(66, 35)
@@ -77,7 +77,7 @@ Partial Class record_sprachaufnahme
         'Button2
         '
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Image = Global.ELP___GrandTheftAustria.My.Resources.Resources.Load
+        Me.Button2.Image = ELDIS.Client.My.Resources.Resources.Load
         Me.Button2.Location = New System.Drawing.Point(754, 198)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(37, 35)

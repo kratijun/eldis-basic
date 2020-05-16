@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{53C63C9B-6DCE-4C19-95FF-11C65B9B9ECD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>ELP___GrandTheftAustria.My.MyApplication</StartupObject>
-    <RootNamespace>ELP___GrandTheftAustria</RootNamespace>
-    <AssemblyName>ELP - GrandTheftAustria</AssemblyName>
+    <StartupObject>ELDIS.Client.My.MyApplication</StartupObject>
+    <RootNamespace>ELDIS.Client</RootNamespace>
+    <AssemblyName>ELDIS.Client</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -22,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>ELP - GrandTheftAustria.xml</DocumentationFile>
+    <DocumentationFile>ELDIS.Client.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -32,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>ELP - GrandTheftAustria.xml</DocumentationFile>
+    <DocumentationFile>ELDIS.Client.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -62,9 +62,6 @@
     </Reference>
     <Reference Include="MySql.Data">
       <HintPath>..\MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="OeMod.UI">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\ELFDIS\OeMod.UI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -239,6 +236,7 @@
     <Compile Include="choose_einsatzbericht.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Module\configModule.vb" />
     <Compile Include="edit_einsatzbericht.Designer.vb">
       <DependentUpon>edit_einsatzbericht.vb</DependentUpon>
     </Compile>
@@ -270,10 +268,13 @@
     <Compile Include="meinprofil.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Module\eldisModule.vb" />
+    <Compile Include="Module\emergencyModule.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>

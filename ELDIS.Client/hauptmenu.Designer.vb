@@ -130,16 +130,16 @@ Partial Class hauptmenu
         '
         'PagerToolStripMenuItem
         '
-        Me.PagerToolStripMenuItem.Image = Global.ELP___GrandTheftAustria.My.Resources.Resources._32_0
+        Me.PagerToolStripMenuItem.Image = Global.ELDIS.Client.My.Resources.Resources._32_0
         Me.PagerToolStripMenuItem.Name = "PagerToolStripMenuItem"
-        Me.PagerToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.PagerToolStripMenuItem.Size = New System.Drawing.Size(193, 34)
         Me.PagerToolStripMenuItem.Text = "Pager"
         '
         'FunkgerätToolStripMenuItem
         '
-        Me.FunkgerätToolStripMenuItem.Image = Global.ELP___GrandTheftAustria.My.Resources.Resources.motorola_mtp850_3l_tetra_pt911b
+        Me.FunkgerätToolStripMenuItem.Image = Global.ELDIS.Client.My.Resources.Resources.motorola_mtp850_3l_tetra_pt911b
         Me.FunkgerätToolStripMenuItem.Name = "FunkgerätToolStripMenuItem"
-        Me.FunkgerätToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.FunkgerätToolStripMenuItem.Size = New System.Drawing.Size(193, 34)
         Me.FunkgerätToolStripMenuItem.Text = "Funkgerät"
         '
         'DisponentToolStripMenuItem
@@ -285,7 +285,7 @@ Partial Class hauptmenu
         '
         Me.maßnahme_record.Enabled = False
         Me.maßnahme_record.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.maßnahme_record.Image = Global.ELP___GrandTheftAustria.My.Resources.Resources.Music1
+        Me.maßnahme_record.Image = Global.ELDIS.Client.My.Resources.Resources.Music1
         Me.maßnahme_record.Location = New System.Drawing.Point(386, 143)
         Me.maßnahme_record.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.maßnahme_record.Name = "maßnahme_record"
@@ -329,7 +329,7 @@ Partial Class hauptmenu
         '
         Me.Button5.Enabled = False
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Image = Global.ELP___GrandTheftAustria.My.Resources.Resources.cog
+        Me.Button5.Image = Global.ELDIS.Client.My.Resources.Resources.cog
         Me.Button5.Location = New System.Drawing.Point(321, 143)
         Me.Button5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button5.Name = "Button5"
@@ -341,7 +341,7 @@ Partial Class hauptmenu
         '
         Me.Button4.Enabled = False
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Image = Global.ELP___GrandTheftAustria.My.Resources.Resources.folder_page
+        Me.Button4.Image = Global.ELDIS.Client.My.Resources.Resources.folder_page
         Me.Button4.Location = New System.Drawing.Point(256, 143)
         Me.Button4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button4.Name = "Button4"
@@ -353,7 +353,7 @@ Partial Class hauptmenu
         '
         Me.Button3.Enabled = False
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Image = Global.ELP___GrandTheftAustria.My.Resources.Resources.Delete
+        Me.Button3.Image = Global.ELDIS.Client.My.Resources.Resources.Delete
         Me.Button3.Location = New System.Drawing.Point(138, 143)
         Me.Button3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button3.Name = "Button3"
@@ -365,7 +365,7 @@ Partial Class hauptmenu
         '
         Me.maßnahme_mehr.Enabled = False
         Me.maßnahme_mehr.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.maßnahme_mehr.Image = Global.ELP___GrandTheftAustria.My.Resources.Resources.Create
+        Me.maßnahme_mehr.Image = Global.ELDIS.Client.My.Resources.Resources.Create
         Me.maßnahme_mehr.Location = New System.Drawing.Point(74, 143)
         Me.maßnahme_mehr.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.maßnahme_mehr.Name = "maßnahme_mehr"
@@ -377,7 +377,7 @@ Partial Class hauptmenu
         '
         Me.maßnahme_ausführen.Enabled = False
         Me.maßnahme_ausführen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.maßnahme_ausführen.Image = Global.ELP___GrandTheftAustria.My.Resources.Resources.Application
+        Me.maßnahme_ausführen.Image = Global.ELDIS.Client.My.Resources.Resources.Application
         Me.maßnahme_ausführen.Location = New System.Drawing.Point(9, 143)
         Me.maßnahme_ausführen.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.maßnahme_ausführen.Name = "maßnahme_ausführen"
@@ -891,7 +891,7 @@ Partial Class hauptmenu
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Image = Global.ELP___GrandTheftAustria.My.Resources.Resources.Application
+        Me.Button2.Image = Global.ELDIS.Client.My.Resources.Resources.Application
         Me.Button2.Location = New System.Drawing.Point(204, 51)
         Me.Button2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button2.Name = "Button2"
@@ -907,7 +907,7 @@ Partial Class hauptmenu
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Image = Global.ELP___GrandTheftAustria.My.Resources.Resources.application_add
+        Me.Button1.Image = Global.ELDIS.Client.My.Resources.Resources.application_add
         Me.Button1.Location = New System.Drawing.Point(9, 29)
         Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button1.Name = "Button1"

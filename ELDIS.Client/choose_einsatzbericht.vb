@@ -7,10 +7,9 @@ Public Class choose_einsatzbericht
 
     Private Sub GetEinsatze()
         Dim conn As MySqlConnection
-        Dim reader As MySqlDataReader
         Dim cmd As New MySqlCommand
         conn = New MySqlConnection()
-        conn.ConnectionString = (“server=" & My.Settings.mysqlserver & " ;userid=" & My.Settings.mysqluser & ";password=" & My.Settings.mysqlpassword & ";database=" & My.Settings.mysqldatabase & "")
+        conn.ConnectionString = ("server=" & configModule.mysqlserver & " ;userid=" & configModule.mysqluser & ";password=" & configModule.mysqlpasswort & ";database=" & configModule.mysqldatabase & "")
         Try
             conn.Open() ' Verbindung öffnen
         Catch myerror As MySqlException
@@ -38,7 +37,7 @@ Public Class choose_einsatzbericht
             stringCmd = "Select * FROM sis_fw_einsatz where einsatznummer= '" & cell.Value.ToString & "'"
         Next
         'Frame your connection string here.
-        stringConn = (“server=" & My.Settings.mysqlserver & " ;userid=" & My.Settings.mysqluser & ";password=" & My.Settings.mysqlpassword & ";database=" & My.Settings.mysqldatabase & "")
+        stringConn = ("server=" & configModule.mysqlserver & " ;userid=" & configModule.mysqluser & ";password=" & configModule.mysqlpasswort & ";database=" & configModule.mysqldatabase & "")
 
         'Get your connection here.
         myConn = New MySqlConnection(stringConn)

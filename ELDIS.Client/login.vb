@@ -7,8 +7,6 @@ Imports System.IO
 Imports System.ComponentModel
 Imports ComputerInfo
 
-
-
 Public Class login
     Dim conn As MySqlConnection
 
@@ -18,7 +16,7 @@ Public Class login
         Else
             Dim cmd As New MySqlCommand
             conn = New MySqlConnection
-            conn.ConnectionString = ("server=" & My.Settings.mysqlserver & " ;userid=" & My.Settings.mysqluser & ";password=" & My.Settings.mysqlpassword & ";database=" & My.Settings.mysqldatabase & "")
+            conn.ConnectionString = ("server=" & configModule.mysqlserver & " ;userid=" & configModule.mysqluser & ";password=" & configModule.mysqlpasswort & ";database=" & configModule.mysqldatabase & "")
             Dim Reader As MySqlDataReader
             Try
                 conn.Open()
@@ -47,8 +45,8 @@ Public Class login
                         For j = 0 To 500
                         Next
                         hauptmenu.Show()
-                            Me.Hide()
-                        ElseIf usertype = "disponent" Then
+                        Me.Hide()
+                    ElseIf usertype = "disponent" Then
                         For j = 0 To 500
                         Next
                         hauptmenu.Show()
@@ -66,7 +64,7 @@ Public Class login
                     MsgBox("Dein Passwort ODER Benutzername ist falsch.", MsgBoxStyle.Information)
                 End If
             Catch ex As Exception
-                MessageBox.Show(ex.Message)
+                MsgBox("Etwas stimmt nicht mit der Datenbankverbindung! Frage bei dem zuständigen Administrator nach und melde dieses Problem.", MsgBoxStyle.Critical)
             Finally
             End Try
         End If
@@ -77,6 +75,10 @@ Public Class login
     End Sub
 
     Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Dies ist die Konfiguration von ELDIS!!!
+        configModule.InitMySQL("deinServer", " deinBenutzer", "deinPasswort", "deineDatenbank")
+        configModule.InitELDISServer("deineIP", 8000)
+        ' ENFERNE DIESE NIEMALS! SONST FUNKTIONIERT DEIN PROGRAMM NICHT!!!
         version.Text = "Version " & Me.GetType.Assembly.GetName.Version.ToString
     End Sub
 End Class

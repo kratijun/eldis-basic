@@ -57,54 +57,6 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property mysqlserver() As String
-            Get
-                Return CType(Me("mysqlserver"),String)
-            End Get
-            Set
-                Me("mysqlserver") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property mysqluser() As String
-            Get
-                Return CType(Me("mysqluser"),String)
-            End Get
-            Set
-                Me("mysqluser") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property mysqlpassword() As String
-            Get
-                Return CType(Me("mysqlpassword"),String)
-            End Get
-            Set
-                Me("mysqlpassword") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property mysqldatabase() As String
-            Get
-                Return CType(Me("mysqldatabase"),String)
-            End Get
-            Set
-                Me("mysqldatabase") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property id() As String
             Get
                 Return CType(Me("id"),String)
@@ -172,9 +124,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.ELP___GrandTheftAustria.My.MySettings
+        Friend ReadOnly Property Settings() As Global.ELDIS.Client.My.MySettings
             Get
-                Return Global.ELP___GrandTheftAustria.My.MySettings.Default
+                Return Global.ELDIS.Client.My.MySettings.Default
             End Get
         End Property
     End Module

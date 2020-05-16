@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ELDIS.Client", "ELP - GrandTheftAustria\ELDIS.Client.vbproj", "{53C63C9B-6DCE-4C19-95FF-11C65B9B9ECD}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ELDIS.Client", "ELDIS.Client\ELDIS.Client.vbproj", "{53C63C9B-6DCE-4C19-95FF-11C65B9B9ECD}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ELDIS.Server", "ELDIS.Server\ELDIS.Server.vbproj", "{C64BB988-ED24-4864-AB87-ADF03AF18259}"
 EndProject

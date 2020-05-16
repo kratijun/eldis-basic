@@ -85,3 +85,32 @@ C:\Users\Oliver Kratochwill\Desktop\eldis-basic-master\ELDIS.Client\obj\Debug\EL
 C:\Users\Oliver Kratochwill\Desktop\eldis-basic-master\ELDIS.Client\obj\Debug\ELP - GrandTheftAustria.exe
 C:\Users\Oliver Kratochwill\Desktop\eldis-basic-master\ELDIS.Client\obj\Debug\ELP - GrandTheftAustria.xml
 C:\Users\Oliver Kratochwill\Desktop\eldis-basic-master\ELDIS.Client\obj\Debug\ELP - GrandTheftAustria.pdb
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\bin\Debug\ComputerInfo.dll
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\bin\Debug\MetroSuite 2.0.dll
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\bin\Debug\MySql.Data.dll
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\bin\Debug\System.ValueTuple.dll
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\bin\Debug\TeamSpeak3QueryApi.dll
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\bin\Debug\System.ValueTuple.xml
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\obj\Debug\ELDIS.Client.vbprojAssemblyReference.cache
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\obj\Debug\ELDIS.Client.vbproj.GenerateResource.cache
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\obj\Debug\ELDIS.Client.vbproj.CoreCompileInputs.cache
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\obj\Debug\ELDIS.Client.vbproj.CopyComplete
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\obj\Debug\ELDIS.Client.choose_einsatzbericht.resources
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\obj\Debug\ELDIS.Client.edit_einsatzbericht.resources
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\obj\Debug\ELDIS.Client.hauptmenu.resources
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\obj\Debug\ELDIS.Client.login.resources
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\obj\Debug\ELDIS.Client.maßnahme_list.resources
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\obj\Debug\ELDIS.Client.meinprofil.resources
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\obj\Debug\ELDIS.Client.Resources.resources
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\obj\Debug\ELDIS.Client.neuen_sis.resources
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\obj\Debug\ELDIS.Client.pager.resources
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\obj\Debug\ELDIS.Client.record_sprachaufnahme.resources
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\bin\Debug\ELDIS.Client.exe.config
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\bin\Debug\ELDIS.Client.exe
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\bin\Debug\ELDIS.Client.pdb
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\bin\Debug\ELDIS.Client.xml
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\obj\Debug\ELDIS.Client.exe
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\obj\Debug\ELDIS.Client.xml
+C:\Users\Oliver Kratochwill\Documents\Gits\ELDIS-SKELET\eldis-basic\ELDIS.Client\obj\Debug\ELDIS.Client.pdb
