@@ -27,6 +27,9 @@ Vorraussetzungen für das ELDIS-Basic System:
 3.) MySQL Datenbank (Am besten mit einer phpMyAdmin Administrationsoberfläche)
 
 ------------------------------------------------------------------------------
+Plugins:
+kratioliver/eldis-plugin-fms: https://github.com/kratioliver/eldis-plugin-fms
+------------------------------------------------------------------------------
 
 
 <b>Was kann ELDIS-Basic?</b>
