@@ -1,4 +1,4 @@
-![ELDIS-BASIC](https://cdn.discordapp.com/attachments/394652887214587904/615593414074826797/Logo2.png?size=90)
+![ELDIS-BASIC](https://cdn.discordapp.com/attachments/394652887214587904/615593414074826797/Logo2.png?size=50)
 
 
 
