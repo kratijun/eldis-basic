@@ -12,7 +12,7 @@ ELDIS-Basic ist momentan leider nur für Feuerwehren erhältlich. Jedoch kannst 
 
 ------------------------------------------------------------------------------
 
-Eine Dokumentation, wie man ELDIS Basic aufsetzt und benutzt, folgt. Du kannst jedoch auf unseren Discord Fragen stellen, es ist jede Frage bzgl. ELDIS erwünscht :) https://discord.gg/NJk8Qkb
+Eine Dokumentation, wie man ELDIS Basic aufsetzt und benutzt, ist in der Datei "ELDIS-Basic-doc.pdf" zu finden. Du kannst jedoch auf unseren Discord Fragen stellen, es ist jede Frage bzgl. ELDIS erwünscht :) https://discord.gg/NJk8Qkb
 
 ------------------------------------------------------------------------------
 
@@ -31,11 +31,11 @@ Vorraussetzungen für das ELDIS-Basic System:
 
 <b>Was kann ELDIS-Basic?</b>
 
-DME (Digital Meldeempfänger): Zum disponieren von Nutzern
+DME (Digital Meldeempfänger): Zum Alarmieren von Nutzern über den erhalt eines Alarmes.
 
-FMS (Funkmeldesystem)       : Zum Versenden von Fahrzeugstatusen an die Leitstelle und zurück
+FMS (Funkmeldesystem)       : Zum Versenden von Fahrzeugstatusen an die Leitstelle und zurück an das Fahrzeug.
 
-Einsatzberichte             : Aufzeichnung von Einsatzabläufen
+Einsatzberichte             : Aufzeichnung von Einsatzabläufen druch Einsatzleitern.
 
 Benutzerverwaltung          : -
 
