@@ -1,4 +1,4 @@
-<a href="url"><img src="eldislogo.png" align="left" height="48" width="48" ></a>
+<img src="eldislogo.png" align="middle" height="400" width="400" >
 
 # Elektronisches Leitstellen Dispositions- und Informationssystem by fren #
 
