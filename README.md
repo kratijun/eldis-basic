@@ -1,4 +1,4 @@
-![eldislogo](eldislogo.png)
+![eldislogo](eldislogo.png =250x250)
 
 
 # Elektronisches Leitstellen Dispositions- und Informationssystem by fren #
