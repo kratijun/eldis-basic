@@ -1,3 +1,5 @@
+![eldislogo](eldislogo.png)
+
 
 # Elektronisches Leitstellen Dispositions- und Informationssystem by fren #
 
