@@ -15,13 +15,12 @@ Module eldisModule
 
     Function ConnectToELDIS()
         Try
-            client.Connect(configModule.ELDISServerIP, configModule.ELDISServerPort) ' hier die ip des servers eintragen. 
-            ' da dieser beim testen wohl lokal läuft, hier die loopback-ip 127.0.0.1.
+            client.Connect(configModule.ELDISServerIP, configModule.ELDISServerPort) 'IP und Port wird in ELDIS.Client/Module/eldisModule.vb festgelegt
             If client.Connected Then
                 stream = client.GetStream
                 streamw = New StreamWriter(stream)
                 streamr = New StreamReader(stream)
-                streamw.WriteLine(My.Settings.benutzername) ' das ist optional.
+                streamw.WriteLine(My.Settings.benutzername) 
                 streamw.Flush()
                 t.Start()
             Else
@@ -43,6 +42,7 @@ Module eldisModule
 
         If My.Settings.usertype = "admin" Then
             hauptmenu.AdminToolStripMenuItem.Visible = True
+            hauptmenu.DisponentToolStripMenuItem.Visible = True
         End If
 
         If My.Settings.usertype = "disponent" Then
@@ -53,13 +53,13 @@ Module eldisModule
 
     Function ConnectToELDISPager()
         Try
-            client.Connect(configModule.ELDISServerIP, configModule.ELDISServerPort) ' hier die ip des servers eintragen. 
-            ' da dieser beim testen wohl lokal läuft, hier die loopback-ip 127.0.0.1.
+            client.Connect(configModule.ELDISServerIP, configModule.ELDISServerPort) 'IP und Port wird in ELDIS.Client/Module/eldisModule.vb festgelegt
+            
             If client.Connected Then
                 stream = client.GetStream
                 streamw = New StreamWriter(stream)
                 streamr = New StreamReader(stream)
-                streamw.WriteLine(My.Settings.benutzername) ' das ist optional.
+                streamw.WriteLine(My.Settings.benutzername) 
                 streamw.Flush()
                 t.Start()
             Else
@@ -85,8 +85,6 @@ Module eldisModule
             End Try
         End While
     End Sub
-
-
 
     Function StreamToServer(ByVal StringServer As String)
         streamw.WriteLine(StringServer)

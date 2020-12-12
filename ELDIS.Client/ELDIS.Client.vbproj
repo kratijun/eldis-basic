@@ -298,12 +298,6 @@
     <Compile Include="pager.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="record_sprachaufnahme.Designer.vb">
-      <DependentUpon>record_sprachaufnahme.vb</DependentUpon>
-    </Compile>
-    <Compile Include="record_sprachaufnahme.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="choose_einsatzbericht.resx">
@@ -335,9 +329,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pager.resx">
       <DependentUpon>pager.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="record_sprachaufnahme.resx">
-      <DependentUpon>record_sprachaufnahme.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

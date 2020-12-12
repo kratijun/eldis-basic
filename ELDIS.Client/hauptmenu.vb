@@ -81,7 +81,6 @@ Public Class hauptmenu
         maßnahme_probesirene.Enabled = True
         maßnahme_ausführen.Enabled = True
         maßnahme_mehr.Enabled = True
-        maßnahme_record.Enabled = False
         controlbox_neweinsatz.Enabled = False
         alarmundmelde_alarmstufebox.Enabled = True
         alarmundmelde_meldebildbox.Enabled = True
@@ -155,15 +154,15 @@ Public Class hauptmenu
         emergencyModule.DispoEmergency()
         If sirene = True Then
             prefix = "#sirene"
-            maßnahmen_view.Rows.Add("LS-Dummy Generalalarm FW-" & configModule.FeuerwehrName & " Sirene", True)
+            maßnahmen_view.Rows.Add("FW-" & configModule.FeuerwehrName & " Sirene", True)
         ElseIf sirene = False Then
             If maßnahme_pager.Checked = True Then
                 prefix = "#pager"
-                maßnahmen_view.Rows.Add("LS-Dummy Generalalarm FW-" & configModule.FeuerwehrName & True)
+                maßnahmen_view.Rows.Add("FW-" & configModule.FeuerwehrName & True)
             Else
                 If probe_sirene = True Then
                     prefix = "#probesirene"
-                    maßnahmen_view.Rows.Add("LS-Dummy Sirenenproberuf" & configModule.FeuerwehrName & True)
+                    maßnahmen_view.Rows.Add("Sirenenproberuf FW-" & configModule.FeuerwehrName & True)
                 End If
             End If
         End If
@@ -225,10 +224,6 @@ Public Class hauptmenu
         meinprofil.Show()
     End Sub
 
-    Private Sub record_sprachaufnahme_Click(sender As Object, e As EventArgs) Handles maßnahme_record.Click
-        record_sprachaufnahme.Show()
-    End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         eldis_tabcontrol.SelectedTab = eldis_einsatzerfassung
         emergencyModule.CreateEmergency(AlarmUhrzeit, "OFFEN", My.Settings.benutzername, "yes", My.Settings.id)
@@ -241,7 +236,6 @@ Public Class hauptmenu
         maßnahme_probesirene.Enabled = True
         maßnahme_ausführen.Enabled = True
         maßnahme_mehr.Enabled = True
-        maßnahme_record.Enabled = False
         controlbox_neweinsatz.Enabled = False
         alarmundmelde_alarmstufebox.Enabled = True
         alarmundmelde_meldebildbox.Enabled = True
@@ -317,7 +311,6 @@ Public Class hauptmenu
                 maßnahme_probesirene.Enabled = True
                 maßnahme_ausführen.Enabled = True
                 maßnahme_mehr.Enabled = True
-                maßnahme_record.Enabled = True
                 controlbox_neweinsatz.Enabled = False
                 alarmundmelde_alarmstufebox.Enabled = True
                 alarmundmelde_meldebildbox.Enabled = True

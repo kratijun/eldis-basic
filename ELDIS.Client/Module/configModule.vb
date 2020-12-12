@@ -15,7 +15,7 @@ Module configModule
     End Function
     Function InitELDISServer(ByVal ip As String, ByVal port As Double)
         ELDISServerIP = ip
-        ELDISServerPort = port
+        ELDISServerPort = 8000 'Hinweis! Server Port ist auf 8000 eingestellt'
     End Function
     Function InitFeuerwehr(ByVal feuerwehrname As String)
         feuerwehrname = feuerwehrname

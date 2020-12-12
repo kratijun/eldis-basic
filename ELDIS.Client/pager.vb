@@ -12,8 +12,6 @@ Public Class pager
     Private t As New Threading.Thread(AddressOf Listen)
     Private Delegate Sub DAddItem(ByVal s As String)
     Private nick As String = My.Settings.benutzername & "'s Pager"
-    Dim FilePath As String = "C:/Sprachaufnahme.mp3"
-    Dim FilePathPager As String = "C:/pager.wav"
     Dim Prefix As String
     Private Const SND_FILENAME As Int32 = &H20000
     Public Const SND_ASYNC = &H1
@@ -38,22 +36,14 @@ Public Class pager
     End Sub
 
 
-    Private Sub SpieleSprachaufnahme()
-        '        My.Computer.Audio.Play("C:/Sprachaufnahme.mp3",
-        'AudioPlayMode.Background)
-        Dim musicAlias As String = "myAudio"
-        PlaySound(FilePath, Nothing, SND_FILENAME Or SND_ASYNC)
-    End Sub
-
     Private Sub pager_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            client.Connect(configModule.ELDISServerIP, configModule.ELDISServerPort) ' hier die ip des servers eintragen. 
-            ' da dieser beim testen wohl lokal läuft, hier die loopback-ip 127.0.0.1.
+            client.Connect(configModule.ELDISServerIP, configModule.ELDISServerPort) ' IP-Adresse und Port im Config einstellen '
             If client.Connected Then
                 stream = client.GetStream
                 streamw = New StreamWriter(stream)
                 streamr = New StreamReader(stream)
-                streamw.WriteLine(nick) ' das ist optional.
+                streamw.WriteLine(nick) 
                 streamw.Flush()
                 t.Start()
             Else
@@ -67,7 +57,7 @@ Public Class pager
     End Sub
 
     Sub PlayStillerAlarm()
-        My.Computer.Audio.Play(My.Resources.pager,
+        My.Computer.Audio.Play(My.Resources.pager, 
         AudioPlayMode.Background)
     End Sub
 

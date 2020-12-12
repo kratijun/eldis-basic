@@ -40,7 +40,6 @@ Partial Class hauptmenu
         Me.initELDIS = New System.Windows.Forms.PictureBox()
         Me.eldis_einsatzerfassung = New System.Windows.Forms.TabPage()
         Me.einsatzerfassung_maßnahmen = New System.Windows.Forms.GroupBox()
-        Me.maßnahme_record = New System.Windows.Forms.Button()
         Me.maßnahmen_view = New System.Windows.Forms.DataGridView()
         Me.Maßnahme = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Ausgeführt = New System.Windows.Forms.DataGridViewCheckBoxColumn()
@@ -261,7 +260,6 @@ Partial Class hauptmenu
         '
         Me.einsatzerfassung_maßnahmen.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.einsatzerfassung_maßnahmen.Controls.Add(Me.maßnahme_record)
         Me.einsatzerfassung_maßnahmen.Controls.Add(Me.maßnahmen_view)
         Me.einsatzerfassung_maßnahmen.Controls.Add(Me.Button5)
         Me.einsatzerfassung_maßnahmen.Controls.Add(Me.Button4)
@@ -281,17 +279,6 @@ Partial Class hauptmenu
         Me.einsatzerfassung_maßnahmen.TabStop = False
         Me.einsatzerfassung_maßnahmen.Text = "Maßnahmen"
         '
-        'maßnahme_record
-        '
-        Me.maßnahme_record.Enabled = False
-        Me.maßnahme_record.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.maßnahme_record.Image = Global.ELDIS.Client.My.Resources.Resources.Music1
-        Me.maßnahme_record.Location = New System.Drawing.Point(386, 143)
-        Me.maßnahme_record.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.maßnahme_record.Name = "maßnahme_record"
-        Me.maßnahme_record.Size = New System.Drawing.Size(56, 54)
-        Me.maßnahme_record.TabIndex = 10
-        Me.maßnahme_record.UseVisualStyleBackColor = True
         '
         'maßnahmen_view
         '
