@@ -193,15 +193,15 @@ Public Class hauptmenu
 
         'if sirene = true then
         '    prefix = "#sirene"
-        '    maßnahmen_view.rows.add("ls-dummy generalalarm fw-" & configmodule.feuerwehrname & " sirene", true)
+        '    maßnahmen_view.rows.add("generalalarm fw-" & configmodule.feuerwehrname & " sirene", true)
         'elseif sirene = false then
         '    if maßnahme_pager.checked = true then
         '        prefix = "#pager"
-        '        maßnahmen_view.rows.add("ls-dummy generalalarm fw-" & configmodule.feuerwehrname & true)
+        '        maßnahmen_view.rows.add("generalalarm fw-" & configmodule.feuerwehrname & true)
         '    else
         '        if probe_sirene = true then
         '            prefix = "#probesirene"
-        '            maßnahmen_view.rows.add("ls-dummy sirenenproberuf" & configmodule.feuerwehrname & true)
+        '            maßnahmen_view.rows.add("sirenenproberuf fw-" & configmodule.feuerwehrname & true)
         '        end if
         '    end if
         'end if
