@@ -76,8 +76,8 @@ Public Class login
 
     Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Dies ist die Konfiguration von ELDIS!!!
-        configModule.InitMySQL("127.0.0.1", "root", "lolcraft", "eldis")
-        configModule.InitELDISServer("127.0.0.1", "8000")
+            configModule.InitMySQL("mysqlserver", "mysqluser", "mysqlpass", "mysqldatabase")
+            configModule.InitELDISServer("eldisip", "eldisport")
         ' ENFERNE DIESE NIEMALS! SONST FUNKTIONIERT DEIN PROGRAMM NICHT!!!
         version.Text = "Version " & Me.GetType.Assembly.GetName.Version.ToString
     End Sub
