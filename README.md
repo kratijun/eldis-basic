@@ -1,5 +1,4 @@
 <p align="center"><img src="eldislogo.png" height="200" width="200"></p>
-![.NET Core](https://github.com/Amenofisch/eldis-basic/workflows/.NET%20Core/badge.svg)
 
 # Elektronisches Leitstellen Dispositions- und Informationssystem by fren #
 
