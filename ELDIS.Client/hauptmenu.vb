@@ -7,7 +7,6 @@ Imports System.Text
 Public Class hauptmenu
     Private nick As String = My.Settings.benutzername
     Dim Uhrzeit As String
-
     Dim Time As String
     Dim myCulture As System.Globalization.CultureInfo = Globalization.CultureInfo.CurrentCulture
     Dim dayOfWeek As DayOfWeek = myCulture.Calendar.GetDayOfWeek(Date.Today)
@@ -26,9 +25,6 @@ Public Class hauptmenu
     Dim sirene As Boolean
     Dim probe_sirene As Boolean
     Dim prefix As String
-
-
-
     Dim stringConn As String
     Dim stringCmd As String
     Dim myConn As MySqlConnection
@@ -134,17 +130,6 @@ Public Class hauptmenu
 
     Private Sub controlbox_speichern_Click(sender As Object, e As EventArgs) Handles controlbox_speichern.Click
         emergencyModule.SaveEmergency(alarmundmelde_alarmstufebox.Text, alarmundmelde_meldebildbox.Text, AlarmUhrzeit, einsatzort_straße.Text, einsatzort_nr.Text, einsatzort_postleitzahl.Text, einsatzort_stadt.Text, sonstiges_intern.Text, sonstiges_extern.Text, einsatznummer_box.Text)
-        'AlarmUhrzeit = DateTime.Now.ToString("dd/MM/yyyy: " & DateTime.Now.ToString("HH:mm:ss"))
-        'conn.Open()
-        'Dim Query As String
-
-        ''Query = "UPDATE sis_fw_einsatz SET alarmstufe = '" & alarmundmelde_alarmstufebox.Text & "', meldebild= '" & alarmundmelde_meldebildbox.Text & "', datum = '" & AlarmUhrzeit & "', straße = '" & einsatzort_straße.Text & "', nr = '" & einsatzort_nr.Text & "', plz = '" & einsatzort_postleitzahl.Text & "', stadt = '" & einsatzort_stadt.Text & "', einsatzort = '" & einsatzort_straße.Text + " " + einsatzort_nr.Text + ", " + einsatzort_postleitzahl.Text + " " + einsatzort_stadt.Text & "', interne_notizen = '" & sonstiges_intern.Text & "', externe_notizen = '" & sonstiges_extern.Text & "' WHERE einsatznummer = '" & einsatznummer_box.Text & "'"
-
-        'COMMAND = New MySqlCommand(Query, conn)
-
-        'READER = COMMAND.ExecuteReader
-        'READER.Close()
-        'conn.Close()
     End Sub
 
     Private Sub PagerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PagerToolStripMenuItem.Click
@@ -167,7 +152,6 @@ Public Class hauptmenu
             End If
         End If
         eldisModule.StreamToServer(prefix + " ELS:  " & alarmundmelde_meldebildbox.Text & " (" & alarmundmelde_alarmstufebox.Text & ") " & " für die Feuerwehr " & configModule.FeuerwehrName & ", " & einsatzort_postleitzahl.Text & " " & einsatzort_stadt.Text & ", " & einsatzort_straße.Text & " " & einsatzort_nr.Text & ", " & "Info: " & sonstiges_extern.Text & " um: " & DateTime.Now.ToString("HH:mm : ss"))
-        'streamw.WriteLine(prefix + " ELS: " & alarmundmelde_meldebildbox.Text & " (" & alarmundmelde_alarmstufebox.Text & ") " & " für die Feuerwehr " & configModule.FeuerwehrName & ", " & einsatzort_postleitzahl.Text & " " & einsatzort_stadt.Text & ", " & einsatzort_straße.Text & " " & einsatzort_nr.Text & ", " & "Info: " & sonstiges_extern.Text & " um: " & DateTime.Now.ToString("HH:mm:ss"))
         maßnahme_ausführen.BackColor = Color.Green
         eldisModule.FlushToServer()
 
@@ -217,7 +201,6 @@ Public Class hauptmenu
 
     Private Sub EinsatzberichtSchreibenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EinsatzberichtSchreibenToolStripMenuItem.Click
         choose_einsatzbericht.Show()
-
     End Sub
 
     Private Sub MeinProfilToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MeinProfilToolStripMenuItem.Click

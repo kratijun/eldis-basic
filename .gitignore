@@ -1,3 +1,31 @@
 
 ELDIS.Client/.vs/ELDIS.Client/v16/.suo
 .vs/ELDIS-Basic/v16/.suo
+ELDIS.Client/bin/Debug/TeamSpeak3QueryApi.dll
+ELDIS.Client/bin/Debug/System.ValueTuple.xml
+ELDIS.Client/bin/Debug/System.ValueTuple.dll
+ELDIS.Client/bin/Debug/System.Diagnostics.DiagnosticSource.xml
+ELDIS.Client/bin/Debug/System.Diagnostics.DiagnosticSource.dll
+ELDIS.Client/bin/Debug/MySql.Data.dll
+ELDIS.Client/bin/Debug/MetroSuite 2.0.dll
+ELDIS.Client/bin/Debug/ELDIS.Client.xml
+ELDIS.Client/bin/Debug/ELDIS.Client.pdb
+ELDIS.Client/bin/Debug/ELDIS.Client.exe.config
+ELDIS.Client/bin/Debug/ELDIS.Client.exe
+ELDIS.Client/bin/Debug/ComputerInfo.dll
+ELDIS.Server/obj/Debug/ELDIS.Server.vbprojAssemblyReference.cache
+ELDIS.Server/obj/Debug/ELDIS.Server.vbproj.GenerateResource.cache
+ELDIS.Server/obj/Debug/ELDIS.Server.vbproj.FileListAbsolute.txt
+ELDIS.Server/obj/Debug/ELDIS.Server.vbproj.CoreCompileInputs.cache
+ELDIS.Server/obj/Debug/ELDIS.Server.pdb
+ELDIS.Server/obj/Debug/ELDIS.Server.exe
+ELDIS.Server/bin/Debug/ELDIS.Server.xml
+ELDIS.Server/obj/Debug/ELDIS.Server.exe
+ELDIS.Server/obj/Debug/ELDIS.Server.pdb
+ELDIS.Server/obj/Debug/ELDIS.Server.exe
+*.exe
+ELDIS.Server/obj/Debug/ELDIS.Server.exe
+ELDIS.Server/bin/Debug/ELDIS.Server.exe.config
+ELDIS.Client/obj/Debug/ELDIS.Client.vbprojAssemblyReference.cache
+ELDIS.Client/obj/Debug/ELDIS.Client.exe
+ELDIS.Client/obj/Debug/ELDIS.Client.pdb

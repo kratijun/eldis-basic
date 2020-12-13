@@ -20,6 +20,7 @@ Module emergencyModule
     Public streamr As StreamReader
     Public client As New TcpClient
     Public LastEmergencyIDText As String
+
     Function DispoEmergency()
         conn = New MySqlConnection()
         conn.ConnectionString = ("server=" & configModule.mysqlserver & " ;userid=" & configModule.mysqluser & ";password=" & configModule.mysqlpasswort & ";database=" & configModule.mysqldatabase & "")

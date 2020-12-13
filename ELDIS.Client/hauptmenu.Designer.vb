@@ -964,6 +964,13 @@ Partial Class hauptmenu
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
+
+Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D 
+me.maximumsize = new size(1780, 920)
+me.minimumsize = me.maximumsize
+Me.MaximizeBox = False
+        
+
     End Sub
 
     Friend WithEvents MenuStrip1 As MenuStrip

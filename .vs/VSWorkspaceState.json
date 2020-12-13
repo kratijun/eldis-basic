@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ELDIS.Client",
+    "\\ELDIS.Client\\Module",
+    "\\ELDIS.Server"
   ],
+  "SelectedNode": "\\ELDIS.Client\\login.vb",
   "PreviewInSolutionExplorer": false
 }
